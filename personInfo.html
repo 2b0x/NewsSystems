@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+		<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+				<title>个人信息</title>
+				<meta name="author" content="DeathGhost">
+				<link rel="stylesheet" type="text/css" href="css/login.css" tppabs="css/login.css">
+				<style>
+					body {
+						height: 100%;
+						background: #16a085;
+						overflow: hidden;
+					}
+					canvas {
+						z-index: -1;
+						position: absolute;
+					}
+				</style>
+				<script src="js/jquery-3.0.0.min.js"></script>
+				<script src="js/verificationNumbers.js"></script>
+				<script src="js/Particleground.js"></script>
+				<script>
+					var verNum = 0;
+					$(document).ready(function() {
+						//粒子背景特效
+						$('body').particleground({
+							dotColor: '#5cbdaa',
+							lineColor: '#5cbdaa'
+						});
+						
+					});
+				</script>
+		</head>
+
+	<body><canvas class="pg-canvas" width="926" height="729"></canvas>
+		<dl class="admin_login">
+			<dt>
+			  	<strong>个人信息</strong>
+			  	<em>大学生考研在线</em>
+			</dt>
+			<dd class="pic">
+				<img src="img/5.png" alt="" id="preview"/>
+				<a href="javascript:;" class="a-upload">
+			    	<input type="file" name="file" id="" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">修改头像
+				</a>
+			</dd>
+			<dd class="email_icon">
+				<input type="text" placeholder="请输入注册邮箱" class="login_txtbx">
+			</dd>
+			<dd class="name_icon">
+				<input type="password" placeholder="请输入帐号昵称" class="login_txtbx">
+			</dd>
+			<dd class="phone_icon">
+				<input type="password" placeholder="请输入联系号码" class="login_txtbx">
+			</dd>
+			<dd class="school_icon">
+				<select name="cars">
+					<option value="">请选择报研学校</option>
+					<option value="saab">华南理工大学</option>
+					<option value="fiat">电子科技大学</option>
+					<option value="audi">上海交通大学</option>
+					
+				</select>
+			</dd>
+			<dd class="pwd_icon">
+				<input type="password" placeholder="请输入您的密码" class="login_txtbx">
+			</dd>
+			<dd class="rpwd_icon">
+				<input type="password" placeholder="请确认您的密码" class="login_txtbx">
+			</dd>
+			<dd>
+				<input type="button" value="确定修改" class="submit_btn" onclick="logins();">
+			</dd>
+
+		</dl>
+
+
+	<script>
+		function logins(){
+
+//			self.location='index.php';
+			window.history.back(-1);
+
+		}
+		
+		 function imgPreview(fileDom){
+	        //判断是否支持FileReader
+	        if (window.FileReader) {
+	            var reader = new FileReader();
+	        } else {
+	            alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+	        }
+	
+	        //获取文件
+	        var file = fileDom.files[0];
+	        var imageType = /^image\//;
+	        //是否是图片
+	        if (!imageType.test(file.type)) {
+	            alert("请选择图片！");
+	            return;
+	        }
+	        //读取完成
+	        reader.onload = function(e) {
+	            //获取图片dom
+	            var img = document.getElementById("preview");
+	            //图片路径设置为读取的图片
+	            img.src = e.target.result;
+	        };
+	        reader.readAsDataURL(file);
+	    }
+	</script>
+	</body>
+</html>

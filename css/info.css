@@ -1,0 +1,28 @@
+/*主体开始*/
+
+.body-list li{
+	position: relative;
+	padding-right: 90px;
+	height: 48px;
+	line-height: 48px;
+	font-size: 16px;
+	border-bottom: 1px solid #dcdcdc;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.span-time{
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: block;
+	width: 80px;
+	color: #999;
+	font-size: 14px;
+	text-align: center;
+}
+.line{
+	height: 0;
+	margin: 10px 0;
+	border-bottom: 1px dotted #DDDDDD;
+}

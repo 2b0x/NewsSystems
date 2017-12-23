@@ -1,0 +1,117 @@
+body{
+	width: 100%;
+	height: 100%;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.body{
+	width: 100%;
+	min-height: 100%;
+	position: relative;
+}
+/*标题开始*/
+.header{
+	width: 1000px;
+	height: 60px;
+	line-height: 60px;	
+	margin: 0 auto;
+}
+.logo{
+	display: inline-block;
+}
+.logo span{
+	font-size: 26px;
+	font-weight: 800;
+	color: rgba(0, 150, 136, 1);
+}
+.login-box{
+ 	display: inline-block;
+	float: right;
+}
+.login-box span{
+	margin: 0 10px;
+}
+.login-box span a:hover{
+	color: rgba(0, 150, 136, 1);
+}
+.login{
+    line-height: 20px;
+    position: absolute;
+
+}
+.login-boxs{
+    display: inline-block;
+    width: 80px;
+    height: 50px;
+    text-align: center;
+    line-height: 60px;
+    margin-top: 11px;
+}
+.login-box dd{
+	float: left;
+    width: 50px;
+    display: inline-block;
+    height: 50px;
+}
+.login-box dd img{
+	width: 100%;
+	height: 100%;
+    border-radius: 50px;
+}
+/*标题结束*/
+
+/*导航栏开始*/
+.nav{
+	width: 100%;
+	margin: 0 auto;
+	background-color: rgba(0, 150, 136, 1);
+}
+.nav-bg{
+	width: 1000px;
+	height: 60px;
+	margin: 0 auto;
+	position: relative;
+}
+.nav-bg ul{
+	display:inline-block;
+}
+.countDown{
+	display: inline-block;
+	position: absolute;
+	right: 45px;
+    line-height: 60px;
+    color: white;
+    font-size: 19px;
+    font-weight: 800;
+}
+.countDown span:nth-child(2){
+	font-size: 35px;
+}
+/*导航栏结束*/
+
+/*内容开始*/
+.unite-title{
+	width: 100%;
+	display: block;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #e5e5e5;
+	cursor: default;
+}
+.unite-title h2{
+	display: inline-block;
+	font-size: 26px;
+	padding: 6px 0;
+	border-bottom: 3px solid #1787e0;
+}
+
+/*内容结束*/
+
+

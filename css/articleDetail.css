@@ -1,0 +1,14 @@
+.header{
+	width: 1000px;
+	height: 60px;
+	line-height: 60px;	
+	margin: 0 auto;
+}
+.logo{
+	display: inline-block;
+}
+.logo span{
+	font-size: 26px;
+	font-weight: 800;
+	color: rgba(0, 150, 136, 1);
+}

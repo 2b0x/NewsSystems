@@ -1,0 +1,32 @@
+<div class="countDown">
+						<div class="CDBox">
+							<dd>下次考试日期:</dd>
+							<input type="date" id="test1" name="date" onchange="showTime()">
+							<span class="cdBox-btn" id="show">当前未选择日期</span>
+							<input type="submit" name="" id="" value="设置倒计时" class="cdBox-btn su"/>
+						</div>
+						
+						
+						
+					</div>
+					
+
+
+<script>
+			function showTime(){
+			var a = document.getElementById('test1');			
+			var date1 = new Date();
+			var date2 = new Date(a.value);
+			var dates = Math.round((date2.getTime() - date1.getTime()) / (24 * 60 * 60 * 1000))+1;
+			if(dates<=0){
+				alert('选择的日期不能为当前日期之前的');
+				return false;
+				
+			}else{
+				document.getElementById('show').innerHTML = '距离考研还有' + dates + '天';
+			}
+
+		}
+
+	
+</script>

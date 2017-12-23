@@ -1,0 +1,90 @@
+
+		<div class="nav">
+				<div class="nav-bg">
+					<ul class="layui-nav layui-bg-green" lay-filter="">
+					  <li class="layui-nav-item"><dd><a href="index.php">&nbsp;首页&nbsp;</a></dd></li>
+					  <li class="layui-nav-item layui-this" value="1">
+					    <a href="javascript:;">考研资讯&nbsp;</a>
+					    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+					      <dd><a href="javascript:;">国家政策</a></dd>
+					      <dd><a href="javascript:;">院校政策</a></dd>
+					      <dd><a href="javascript:;">考研资讯</a></dd>
+					    </dl>
+					  </li>
+					  <li class="layui-nav-item " value="2">
+					  	<a href="javascript:;">研友学习圈</a>
+					  	<dl class="layui-nav-child"> <!-- 二级菜单 -->
+					      <dd><a href="book.php">考研图书</a></dd>
+					      <dd><a href="javascript:;">学方法习</a></dd>
+					    </dl>
+					  </li>
+					  <li class="layui-nav-item" value="3"><dl><dd><a href="community.php" target="_blank">研友交流圈</a></dd></dl></li>
+					  
+					  <li class="layui-nav-item" value="4"><dl><dd><a href="feedback.php" target="_blank">报名课程</a></dd></dl></li>
+					
+					  <li class="layui-nav-item fr">
+							<a href=""><img src="img/5.png" class="layui-nav-img">用户名</a>
+							<dl class="layui-nav-child">
+								<dd><a href="personInfo.php">修改信息</a></dd>
+								<dd><a href="javascript:;">退出登录</a></dd>
+							</dl>
+					  </li>
+					</ul>
+				</div>
+			</div>
+
+<script src="js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+		layui.use('element', function() {
+			var element = layui.element;
+		});
+	
+		layui.use('carousel', function() {
+			var carousel = layui.carousel;
+			//建造实例
+			carousel.render({
+				elem: '#test1',
+				width: '100%' //设置容器宽度
+					,
+				arrow: 'always' //始终显示箭头
+					,
+				height: '300px'
+				//,anim: 'updown' //切换动画方式
+			});
+		});
+	
+	var main_box = document.getElementsByClassName('main-l-body')[0];
+	var dd = document.getElementsByClassName('nav')[0].getElementsByTagName('dd');
+	for (var index=0; index < dd.length; index++) {
+		(function (index) {
+			dd[index].onclick = function () {
+//				1 2 3 5
+				var unite_title=['国家政策','院校政策','考研咨询','','学习方法'];
+				if(index==1 || index==2 || index==3 || index==4 || index==5){
+					
+					document.getElementsByClassName('unite-title')[0].getElementsByTagName('h2')[0].innerHTML=unite_title[index-1];
+				}
+ 
+				var _url;
+				if(index==7||index==6||index==4){
+					_url='none'
+				}else{
+					_url='list.php';
+				}
+				
+				$.post( _url ,
+				{
+					type:index
+				},
+				function(data){
+					var htmlobj = data;
+					var mainBody = $('#mainBody');
+			        mainBody.html('');
+			        mainBody.html(htmlobj);
+				});
+				console.log(index);
+				
+			};
+		})(index);
+	}
+</script>

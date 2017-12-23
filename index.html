@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="renderer" content="webkit">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  	<link rel="stylesheet" href="css/layui.css"  media="all">
+  	<link rel="stylesheet" href="css/base.css" />
+  	<link rel="stylesheet" href="css/index.css"/>
+  	<link rel="stylesheet" href="css/footer.css"/>
+	<script src="js/layui.js" charset="utf-8"></script>
+  	
+	<title>首页</title>
+</head>
+<body>
+	<div class="body">
+		<div class="header">
+			<div class="logo">
+				<span>大学生考研在线</span>
+			</div>
+			<div class="login-box">
+				<dd><img src="img/5.png" alt="" /></dd>
+				<div class="login-boxs">
+					<span class="login"><a href="login.php">用户登录</a></span>
+					<span class="register"><a href="register.php">注册用户</a></span>
+				</div>
+			</div>
+		
+		</div>
+		<div class="nav">
+			<div class="nav-bg">
+				<ul class="layui-nav layui-bg-green" lay-filter="">
+				  <li class="layui-nav-item layui-this"><a href="index.php">&nbsp;首页&nbsp;</a></li>
+				  <li class="layui-nav-item">
+				    <a href="javascript:;">考研资讯&nbsp;</a>
+				    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+				      <dd><a href="info.php?type=1">国家政策</a></dd>
+				      <dd><a href="info.php?type=2">院校政策</a></dd>
+				      <dd><a href="info.php?type=3">考研资讯</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item ">
+				  	<a href="javascript:;">研友学习圈</a>
+				  	<dl class="layui-nav-child"> <!-- 二级菜单 -->
+				      <dd><a href="book.php">考研图书</a></dd>
+				      <dd><a href="info.php?type=4">学方法习</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item"><a href="community.php">研友交流圈</a></li>
+				  
+				  <li class="layui-nav-item"><a href="feedback.php" target="_blank">报名课程</a></li>
+				</ul>
+				
+				<div class="countDown">
+					<span>距离考研还剩：</span>
+					<span>123</span>
+					<span> &nbsp;天</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="main">
+			<!--全站总览-->
+			<div class="main-outline">
+				<div class="outline-l">
+					<div class="rukou">
+						<dl class="l-title">报名入口</dl>
+						<dd class="l-body">
+							<a href="">硕士统考</a>
+							<a href="">推荐免试</a>
+							<a href="">博士</a>
+						</dd>
+					</div>
+					<div class="gonshi">
+						<dl class="l-title">录取公示</dl>
+						<dd class="l-body">
+							<a href="">全国硕士生招生信息公开平台</a>
+							<a href="">推免录取信息公开</a>
+						<dd>
+					</div>
+					<div class="kaoshi">
+						<dl class="l-title">诚信考试</dl>
+						<dd class="l-body">
+							<a href="">国家教育考试违规处理办法</a>
+							<a href="">普通高等学校招生违规行为处理办法</a>
+							<a href="">全国硕士研究生招生考试考场规则</a>
+							<a href="">考研作弊已入刑</a>
+						<dd>
+					</div>
+					<div class="zhengce">
+						<dl class="l-title">资助政策</dl>
+						<dd class="l-body">
+							<a href="">研究生资助政策</a>
+						<dd>
+					</div>
+					<div class="xingshi">
+						<dl class="l-title">学习形式</dl>
+						<dd class="l-body">
+							<a href="">全日制</a>
+							<a href="">非全日制</a>
+						<dd>
+					</div>
+					<div class="fangshi">
+						<dl class="l-title">考试方式</dl>
+						<dd class="l-body">
+							<a href="">全国统一考试</a>
+							<a href="">联合考试</a>
+							<a href="">单独考试</a>
+							<a href="">推荐免试</a>
+						<dd>
+					</div>
+				</div>
+				<div class="outline-r">
+					<div class="outline-r-top">
+						<div class="layui-carousel" id="test1">
+						  	<div carousel-item>
+							    <div><img src="img/4.jpg"/></div>
+							    <div><img src="img/2.jpg"/></div>
+							    <div><img src="img/3.jpg"/></div>
+							    <div><img src="img/1.jpg" style="width: 100%;"/></div>
+							</div>
+						</div>
+					</div>
+					<div class="outline-r-bottom">
+						<div class="outline-r-bottom-l">
+							<div class="bottom-title">
+								<span>考研日程</span>
+							</div>
+							<div class="bottom-body">
+								<ul>
+									<li><a href="" style="color: #1787e0;">现场确认</a></li>
+									<li><a href="" style="color: #1787e0;">打印准考证</a></li>
+									<li><a href="">2018研招办访谈</a></li>
+									<li><a href="">2018考研：“学硕”VS“专硕”</a></li>
+									<li><a href="">2018推荐免试攻读研究生申请指南</a></li>
+									<li><a href="">2018考研全程早规划</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="outline-r-bottom-r">
+							<div class="bottom-title">
+								<span>热点关注</span>
+							</div>
+							<div class="bottom-body">
+								<div class="bank-border"></div>
+									<div class="bb-item">
+										<span class="title">
+											<i class="iconfont">○</i>
+											<a href="">全国硕士研究生招生考试网上报名平台</a>
+										</span>
+										<span class="time">2017-11-17</span>
+									</div>
+									<div class="bb-item">
+										<span class="title">
+											<i class="iconfont">○</i>
+											<a href="">全国硕士研究生招生考试网上报名平台</a>
+										</span>
+										<span class="time">2017-11-17</span>
+									</div>
+									<div class="bb-item">
+										<span class="title">
+											<i class="iconfont">○</i>
+											<a href="">全国硕士研究生招生考试网上报名平台</a>
+										</span>
+										<span class="time">2017-11-17</span>
+									</div>
+									<div class="bb-item">
+										<span class="title">
+											<i class="iconfont">○</i>
+											<a href="">全国硕士研究生招生考试网上报名平台</a>
+										</span>
+										<span class="time">2017-11-17</span>
+									</div>
+									
+							</div>
+						</div>
+					</div>
+				</div>				
+			</div>
+			
+			<!--考研资讯-->
+			<div class="info">
+				<div class="unite-title">
+					<h2>考研资讯</h2>
+				</div>
+				<div class="info-main">
+					<div class="info-l">
+						<div class="country">
+							<div class="il-head">
+								<span>国家政策</span>
+								<span><a href="">更多 ></a></span>
+							</div>
+							<div class="info-body">
+								<ul class="ib-content">
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">关于做好2018年“退役大学生士兵”专项硕士研究生招生计划招生工作的通知</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">2018年全国硕士研究生招生考试公告</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">教育部关于印发《2018年全国硕士研究生招生工作管理规定》的通知</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">教育部 国家中医药管理局关于医教协同深化中医药教育改革与发展的指导意见</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">国务院办公厅关于深化医教协同进一步推进医学教育改革与发展的意见</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">教育部办公厅关于调整“少数民族高层次骨干人才计划”硕士研究生基础强化培训的通知</a></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="school">
+							<div class="il-head">
+								<span>院校政策</span>
+								<span><a href="">更多 ></a></span>
+							</div>
+							<div class="info-body">
+								<ul class="ib-content">
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">关于做好2018年“退役大学生士兵”专项硕士研究生招生计划招生工作的通知</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">2018年全国硕士研究生招生考试公告</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">教育部关于印发《2018年全国硕士研究生招生工作管理规定》的通知</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">教育部 国家中医药管理局关于医教协同深化中医药教育改革与发展的指导意见</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">国务院办公厅关于深化医教协同进一步推进医学教育改革与发展的意见</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">教育部办公厅关于调整“少数民族高层次骨干人才计划”硕士研究生基础强化培训的通知</a></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="consult">
+							<div class="il-head">
+								<span>考研资讯</span>
+								<span><a href="">更多 ></a></span>
+							</div>
+							<div class="info-body">
+								<ul class="ib-content">
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">关于做好2018年“退役大学生士兵”专项硕士研究生招生计划招生工作的通知</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">2018年全国硕士研究生招生考试公告</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">教育部关于印发《2018年全国硕士研究生招生工作管理规定》的通知</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">教育部 国家中医药管理局关于医教协同深化中医药教育改革与发展的指导意见</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">国务院办公厅关于深化医教协同进一步推进医学教育改革与发展的意见</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">教育部办公厅关于调整“少数民族高层次骨干人才计划”硕士研究生基础强化培训的通知</a></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="info-r">
+						<div class="apply">
+							<p class="apply-title">考研报考</p>
+							<dl class="apply-itmes">
+								<dt class="apply-logo"><i class="layui-icon">&#xe609;</i><p>确定方向</p></dt>
+								<dd class="apply-item"><a href="">优先确定报考方向</a></dd>
+								<dd class="apply-item"><a href="">如何选择正确方向</a></dd>
+							</dl>
+							<dl class="apply-itmes">
+								<dt class="apply-logo"><i class="layui-icon">&#xe63c;</i><p>选择专业</p></dt>
+								<dd class="apply-item"><a href="">专业介绍</a></dd>
+								<dd class="apply-item"><a href="">专业排名</a></dd>
+								<dd class="apply-item"><a href="">考虑因素</a></dd>
+								<dd class="apply-item"><a href="">学硕VS专硕</a></dd>
+								
+							</dl>
+							<dl class="apply-itmes">
+								<dt class="apply-logo"><i class="layui-icon">&#xe68e;</i><p>选择学校</p></dt>
+								<dd class="apply-item"><a href="">34所</a></dd>
+								<dd class="apply-item"><a href="">985</a></dd>
+								<dd class="apply-item"><a href="">211</a></dd>
+								<dd class="apply-item"><a href="">四梯度择校</a></dd>
+								<dd class="apply-item"><a href="">学校层次</a></dd>
+							</dl>
+							<dl class="apply-itmes">
+								<dt class="apply-logo"><i class="layui-icon">&#xe63a;</i><p>考研报名</p></dt>
+								<dd class="apply-item"><a href="">报名时间</a></dd>
+								<dd class="apply-item"><a href="">预报名</a></dd>
+								<dd class="apply-item"><a href="">网报流程</a></dd>
+								<dd class="apply-item"><a href="">注意事项</a></dd>
+							</dl>
+							<dl class="apply-itmes">
+								<dt class="apply-logo"><i class="layui-icon">&#xe6b2;</i><p>现场确认</p></dt>
+								<dd class="apply-item"><a href="">现场确认时间地点</a></dd>
+								<dd class="apply-item"><a href="">现场确认须知</a></dd>
+							</dl>
+						</div>
+						<div class="hot">
+							<div class="il-head">
+								<span>热点关注</span>
+							</div>
+							<div class="info-body">
+								<ul class="ib-content">
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">究生招生计划招生工作的通知</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">试公告</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">定的通知</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">局关于医革与发展与发展的指导意见</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">国务院办展的意见</a></span>
+									</li>
+									<li class="ib-items">
+										<span class="dot-icon"></span>
+										<span class="ib-news"><a href="">教硕士化培训的通知</a></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+			
+			<!--备考资料-->
+			<div class="lesson">
+				<div class="unite-title">
+					<h2>备考资料</h2>
+				</div>
+				<div class="lesson-l">
+					<div class="il-head">
+						<span>考研图书</span>
+						<span><a href="">更多 ></a></span>
+					</div>
+					<div class="ll-body">
+						<ul class="booklist">
+							<li>
+								<em><img src="img/5.png"/></em>
+								<div class="bookinfo">
+									<p><a href="">《2018考研数学36讲》</a></p>
+									<p>书内容均由张宇老师亲自独立编写完成。可供考生在基础阶段选用。</p>
+									<p>2016-03-11</p>
+								</div>
+							</li>
+							<li>
+								<em><img src="img/5.png"/></em>
+								<div class="bookinfo">
+									<p><a href="">《2018考研数学36讲》</a></p>
+									<p>书内容均由张宇老师亲自内容均由张宇老师亲内师亲内容均由张宇老师亲独立编写完成。可供考生在基础阶段选用。</p>
+									<p>2016-03-11</p>
+								</div>
+							</li>
+							<li>
+								<em><img src="img/5.png"/></em>
+								<div class="bookinfo">
+									<p><a href="">《2018考研数学36讲》</a></p>
+									<p>书内容均由张宇老师亲自独立编写完成。可供考生在基础阶段选用。</p>
+									<p>2016-03-11</p>
+								</div>
+							</li>
+							<li>
+								<em><img src="img/5.png"/></em>
+								<div class="bookinfo">
+									<p><a href="">《2018考研数学36讲》</p></a>
+									<p>书内容均由张宇老师亲自独立编写完成。可供考生在基础阶段选用。</p>
+									<p>2016-03-11</p>
+								</div>
+							</li>
+							<li>
+								<em><img src="img/5.png"/></em>
+								<div class="bookinfo">
+									<p><a href="">《2018考研数学36讲》</a></p>
+									<p>书内容均由张宇老师亲自独立编写完成。可供考生在基础阶段选用。</p>
+									<p>2016-03-11</p>
+								</div>
+							</li>
+							<li>
+								<em><img src="img/5.png"/></em>
+								<div class="bookinfo">
+									<p><a href="">《2018考研数学36讲》</a></p>
+									<p>书内容均由张宇老师亲自独立编写完成。可供考生在基础阶段选用。</p>
+									<p>2016-03-11</p>
+								</div>
+							</li>
+						</ul>
+						
+					</div>
+				</div>
+				<div class="lesson-r">
+					<div class="il-head">
+						<span>学习方法</span>
+						<span><a href="">更多 ></a></span>
+					</div>
+					<div class="info-body">
+						<ul class="ib-content">
+							<li class="ib-items">
+								<span class="dot-icon"></span>
+								<span class="ib-news"><a href="">关于做好2018年“退役大学生士兵”专项硕士研究生招生计划招生工作的通知</a></span>
+							</li>
+							<li class="ib-items">
+								<span class="dot-icon"></span>
+								<span class="ib-news"><a href="">2018年全国硕士研究生招生考试公告</a></span>
+							</li>
+							<li class="ib-items">
+								<span class="dot-icon"></span>
+								<span class="ib-news"><a href="">教育部关于印发《2018年全国硕士研究生招生工作管理规定》的通知</a></span>
+							</li>
+							<li class="ib-items">
+								<span class="dot-icon"></span>
+								<span class="ib-news"><a href="">教育部 国家中医药管理局关于医教协同深化中医药教育改革与发展的指导意见</a></span>
+							</li>
+							<li class="ib-items">
+								<span class="dot-icon"></span>
+								<span class="ib-news"><a href="">国务院办公厅关于深化医教协同进一步推进医学教育改革与发展的意见</a></span>
+							</li>
+							<li class="ib-items">
+								<span class="dot-icon"></span>
+								<span class="ib-news"><a href="">教育部办公厅关于调整“少数民族高层次骨干人才计划”硕士研究生基础强化培训的通知</a></span>
+							</li>
+							<li class="ib-items">
+								<span class="dot-icon"></span>
+								<span class="ib-news"><a href="">教育部办公厅关于调整“少数民族高层次骨干人才计划”硕士研究生基础强化培训的通知</a></span>
+							</li>
+							<li class="ib-items">
+								<span class="dot-icon"></span>
+								<span class="ib-news"><a href="">教育部办公厅关于调整“少数民族高层次骨干人才计划”硕士研究生基础强化培训的通知</a></span>
+							</li>
+							<li class="ib-items">
+								<span class="dot-icon"></span>
+								<span class="ib-news"><a href="">教育部办公厅关于调整“少数民族高层次骨干人才计划”硕士研究生基础强化培训的通知</a></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<?php 	include('footer.html');  ?>
+	</div>
+	
+
+<script>
+	layui.use('element', function() {
+		var element = layui.element;
+	});
+
+	layui.use('carousel', function() {
+		var carousel = layui.carousel;
+		//建造实例
+		carousel.render({
+			elem: '#test1',
+			width: '100%' //设置容器宽度
+				,
+			arrow: 'always' //始终显示箭头
+				,
+			height: '300px'
+			//,anim: 'updown' //切换动画方式
+		});
+	});
+
+	
+	
+</script>
+</body>
+</html>

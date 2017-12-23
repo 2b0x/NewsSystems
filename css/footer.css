@@ -1,0 +1,49 @@
+body,html{
+	margin: 0;
+	padding: 0;
+}
+
+/*页脚开始*/
+.footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 250px;
+	display: block;
+	background-color: rgba(40,40,40,1);
+}
+.footerbg{
+	width: 1000px;
+	height: 250px;
+	display: block;
+	margin: 0 auto;
+	color: #ababab;
+}
+.footerbg a{
+	color: #ababab;
+	margin-right: 15px;
+}
+.footerbg a:hover{
+	color: #fff;
+	text-decoration: underline;
+}
+.footerbg p{
+	margin-bottom: 10px;
+}
+.footerbg-l{
+    height: 100%;
+    width: 510px;
+    float: left;
+}
+.footer-list{
+	margin-top: 50px;
+}
+.footer-units{
+	margin-top: 35px;
+}
+.footerbg-r{
+    /*height: 100%;*/
+    float: right;
+	padding-top: 50px;
+}
+/*页脚结束*/
