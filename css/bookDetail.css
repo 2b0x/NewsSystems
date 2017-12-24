@@ -1,0 +1,24 @@
+.bookContInfo{
+	display: inline-block;
+	float: left;
+	width: 330px;
+    padding: 0 0 0 30px;
+}
+.bookContInfo p{
+	margin-bottom: 10px;
+
+}
+.bookContInfo p:nth-child(1){
+	margin-bottom: 20px;
+}
+.bookContInfo p:nth-child(2),.bookContInfo p:nth-child(3){
+	display: inline-block;
+	margin-right: 20px;
+}
+.bookContInfo p:nth-child(1){
+    font-size: 16px;
+    font-weight: 600;
+}
+.fontBlue{
+    color: #1a66b3;
+}

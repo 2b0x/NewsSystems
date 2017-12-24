@@ -2,7 +2,6 @@ body,html{
 	margin: 0;
 	padding: 0;
 }
-
 /*页脚开始*/
 .footer{
 	position: absolute;
@@ -42,7 +41,6 @@ body,html{
 	margin-top: 35px;
 }
 .footerbg-r{
-    /*height: 100%;*/
     float: right;
 	padding-top: 50px;
 }

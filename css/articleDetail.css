@@ -1,3 +1,11 @@
+.body{
+	position: relative;
+}
+
+/*头部*/
+.header-bg{
+	background-color: #009688;
+}
 .header{
 	width: 1000px;
 	height: 60px;
@@ -10,5 +18,38 @@
 .logo span{
 	font-size: 26px;
 	font-weight: 800;
-	color: rgba(0, 150, 136, 1);
+	color: white;
+}
+
+/*内容*/
+.main-left{
+    margin-top: 10px;
+}
+
+.layui-breadcrumb{
+	visibility: visible;
+    display: inline-block;
+    background-color: #009688;
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 5px 0 0;
+}
+.layui-breadcrumb a{
+	display: inline-block;
+}
+.layui-breadcrumb a cite{
+	color: white !important;
+	cursor: default;
+	overflow: hidden;
+	display: inline-block;
+}
+.layui-breadcrumb a:nth-child(1){
+	margin-left: 20px;
+}
+#artTitle{	
+    max-width: 380px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }

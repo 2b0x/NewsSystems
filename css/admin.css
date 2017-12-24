@@ -149,7 +149,7 @@ html{
 }
 .toolbar {
 	border: 1px solid #ccc;
-	margin: 20px 0 5px !important;
+	margin: 10px 0 5px !important;
 	height: 38px;
 	line-height: 30px;
 }
@@ -157,7 +157,9 @@ html{
 	border: 1px solid #ccc;
 	height: 800px;
 }
-
+.newPublishInfo input.layui-input{
+	margin-top: 20px;
+}
 
 /*已发布图书*/
 .booklist{

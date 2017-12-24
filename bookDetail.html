@@ -1,9 +1,100 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-	</body>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+  	<link rel="stylesheet" href="css/layui.css"  media="all">
+  	<link rel="stylesheet" href="css/articleDetail.css" />
+	<link rel="stylesheet" href="css/Cbase.css" />  	
+  	<link rel="stylesheet" href="css/footer.css"/>
+  	<link rel="stylesheet" href="css/foucs.css"/>
+  	<link rel="stylesheet" href="css/bookDetail.css"/>
+  	
+	<title>文章详情</title>
+</head>
+<body>
+	<div class="body">
+		<div class="header-bg">
+			<div class="header">
+				<div class="logo">
+					<span>大学生考研在线</span>
+				</div>
+			</div>
+		</div>
+			
+		
+			<div class="layui-clear"></div>
+		
+		
+		<div class="main">
+				
+				<div class="main-left">
+					<div class="main-l-body" id="mainBody">
+						<span class="layui-breadcrumb" lay-separator="—">
+						  <a><cite>考研在线 /</cite></a>
+						  <a id="artType"><cite>考研图书 /</cite></a>
+						  <!--<a>文章详情 /</a>-->
+						  <a><cite id="artTitle">这是书名</cite></a>
+						  <a><cite id="artTime">2017-08-12</cite></a>
+						</span>
+						
+						<div class="bookContent">
+							<div class="mod_focus_show" id="divimgplay">
+						        <ul class="mod_focus_pic" id="divimginfog_imgPlayer">
+						            <li><a>
+						                <img src="img/1.jpg" alt="" width="400" height="510" /></a></li>
+						            <li><a>
+						                <img src="img/2.jpg" alt="" width="400" height="510" /></a></li>
+						            <li><a>
+						                <img src="img/3.jpg" alt="" width="400" height="510" /></a></li>
+						           
+						        </ul>
+						        <ul class="mod_focus_title" id="ptitleg_imgPlayer" style="display: none;">
+						            <li class="current">
+						                <h3><a></a></h3>
+						                <p></p>
+						            </li>
+						        </ul>
+						        <ul class="mod_focus_list" id="divpageinfog_imgPlayer">
+						            <li class="current"><a>
+						                <img src="img/1.jpg" alt="" width="60" height="60" /><span class="border"></span><span class="mask"></span></a></li>
+						            <li><a>
+						                <img src="img/2.jpg" alt="" width="60" height="60" /><span class="border"></span><span class="mask"></span></a></li>
+						            <li><a>
+						                <img src="img/3.jpg" alt="" width="60" height="60" /><span class="border"></span><span class="mask"></span></a></li>
+						        </ul>
+						    </div>
+						
+							<div class="bookContInfo">
+							<!--书名，作者，isbn，价格，出版社，简介-->
+								<p>不流于美好愿望：新经济学如何帮助解决全球贫困问题 [More Than Good Intentions: How a New Economics Is Helping To Solve Global Poverty]</p>
+								<p><span>作者：</span><span id="author" class="fontBlue">迪恩·卡尔兰</span></p>
+								<p><span>出版社：</span><span id="press" class="fontBlue">三联出版社</span></p>
+								<p><span>ISBN：</span><span id="isbn" class="fontBlue">9787100069038</span></p>
+								<p><span>定价：</span><span id="price" class="fontBlue">46.0</span></p>
+								<p><span>简介：</span><span id="intro" class="">面对全球贫困问题时，人们的态度往往趋于两极：或认为我们已经徒劳地投入太多资源来填补这个“无底洞”，或认为应该不断投入更多。迪恩．卡尔兰和雅各布．阿佩尔的研究提出了全新的观点与方法，他们把行为经济学融入全球性的实地研究中，将读者带到世界各地的贫困地区，让经济理论与现实生活相碰撞。　 
+	　　本书让我们明白，对改善贫困真正有效的究竟是什么，“慈善”又如何才能增进全世界人民的福祉。</span></p>
+							</div>	
+						</div>
+						
+							
+					</div>
+						
+   
+						
+				</div>
+			
+				<?php include('sideNav.html');  ?>
+				
+		</div>
+			<div class="layui-clear"></div>
+		<?php 	include('footer.html');  ?>
+	</div>
+	
+<script src="js/foucs.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	foucsbox(2500);
+	
+	
+</script>
+</body>
 </html>
