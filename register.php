@@ -18,6 +18,8 @@
 //			 @mysql_query($sqlstr) or die(mysql_error());  
     		// header('location:login.php');  
 			echo '<p><img src="getImage.php?action=show&id=51" width="150"></p>'; 
+//			echo '<script> alert(123); </script>';
+			
 			exit();  
 			
 		}
