@@ -1,42 +1,40 @@
 					<div class="newPublishBook">
-						<form action="" method="post">
+						<form action="newPublishBook.php" method="post" id="form1">
 							<div class="bookInfo">
-								 <input type="text" name="title" required  lay-verify="required" placeholder="书名" autocomplete="off" class="layui-input">
-								 <input type="text" name="title" required  lay-verify="required" placeholder="作者" autocomplete="off" class="layui-input">
-								 <input type="text" name="title" required  lay-verify="required" placeholder="价格" autocomplete="off" class="layui-input">
-								 <input type="text" name="title" required  lay-verify="required" placeholder="ISBN" autocomplete="off" class="layui-input">
-								 <input type="text" name="title" required  lay-verify="required" placeholder="出版社" autocomplete="off" class="layui-input">
-								<textarea name="" rows="" cols="" placeholder="简介"  class="layui-textarea"></textarea>
+								 <input type="text" name="book_name" required  lay-verify="required" placeholder="书名" autocomplete="off" class="layui-input">
+								 <input type="text" name="author" required  lay-verify="required" placeholder="作者" autocomplete="off" class="layui-input">
+								 <input type="text" name="price" required  lay-verify="required" placeholder="价格" autocomplete="off" class="layui-input">
+								 <input type="text" name="isbn" required  lay-verify="required" placeholder="ISBN" autocomplete="off" class="layui-input">
+								 <input type="text" name="press" required  lay-verify="required" placeholder="出版社" autocomplete="off" class="layui-input">
+								 <textarea name="intro" rows="" cols="" placeholder="简介"  class="layui-textarea"></textarea>
 								
 								
-							</div>
-							
+							</div>							
 							<div class="bookImg">
 								<div class="img-box">
 									<img src="img/5.png" alt="" height="250px" width="177" id="preview0" />
 									<a href="javascript:;" class="a-upload">
-								    	<input type="file" name="photo" id="" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传图书
+								    	<input type="file" name="photo1" id="" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传图书
 									</a>
 								</div>
 								<div class="img-box">
 									<img src="img/5.png" alt="" height="250px" width="177" id="preview1" />
 									<a href="javascript:;" class="a-upload">
-								    	<input type="file" name="photo" id="" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传图书
+								    	<input type="file" name="photo2" id="" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传图书
 									</a>
 								</div>
 								<div class="img-box">
 									<img src="img/5.png" alt="" height="250px" width="177" id="preview2" />
 									<a href="javascript:;" class="a-upload">
-								    	<input type="file" name="photo" id="" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传图书
+								    	<input type="file" name="photo3" id="" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传图书
 									</a>
-								</div>
-								
+								</div>								
 							</div>
-							<input type="submit" class="bookBtn btnBlue" value="发布图书"/>
+							<input type="button" class="bookBtn btnBlue" id="publishBook" value="发布图书" onclick="fsubmit()"/>
 							<input type="reset" class="bookBtn btnOrg" value="重新填写" onclick="Reset()"/>
 						</form>
 					</div>
-					
+					<div id="result"></div>
 
 
 <script>
@@ -48,7 +46,6 @@
 			function imgPreview(fileDom){
 //				console.log(_id);
 				var perview = 'perview' + _id;
-//				console.log(perview);
 			    //判断是否支持FileReader
 			    if (window.FileReader) {
 			        var reader = new FileReader();
@@ -80,5 +77,32 @@
 					img.src = "img/5.png";
 				}
 			}
+			
+			function fsubmit() {
+				var form1=document.getElementById("form1");
+		        var fd =new FormData(form1);
+		        $.ajax({
+		             url: "newPublishBook.php",
+		             type: "POST",
+		             data: fd,
+		             processData: false,
+		             contentType: false,
+		             success: function(response,status,xhr){
+		                console.log(xhr);
+		                var json=$.parseJSON(response);
+		                var result = '';
+		                result +=json['book_name']+"<br/>"+json['author']+"<br/>"+json['price']+"<br/>"+json['isbn']+"<br/>"+json['press']+"<br/>"+json['intro'];
+		                 result += '<br/><img src="' + json['photo1'] + '" height="100" />';
+		                 result += '<br/><img src="' + json['photo2'] + '" height="100" />';
+		                 result += '<br/><img src="' + json['photo3'] + '" height="100" />';
+		                 result += '<br/>' + json['photo1'];
+		                 result += '<br/>' + json['photo2'];
+		                 result += '<br/>' + json['photo3'];
+		                 $('#result').html(result);
+		             }
+		        });
+		        return false;
+			}
+			
 			
 </script>
