@@ -54,7 +54,7 @@
 				
 				<div class="countDown">
 					<span>距离考研还剩：</span>
-					<span>123</span>
+					<span id="countTime">123</span>
 					<span> &nbsp;天</span>
 				</div>
 			</div>
@@ -499,7 +499,12 @@
 		});
 	});
 
-	
+	//设置倒计时
+	var countTime="<?php echo $countTime; ?>";
+	var today = new Date();
+	var countDown = (countTime - today) / (1000 * 60 * 60 *24) + 0.5; 
+	countDown=parseInt(countDown);
+	document.getElementById('countTime').innerHTML=countDown;
 	
 </script>
 </body>

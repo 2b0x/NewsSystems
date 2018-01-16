@@ -5,11 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="renderer" content="webkit">
 	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	  	<link rel="stylesheet" href="css/layui.css"  media="all">
-	  	<link rel="stylesheet" href="css/admin.css"/>
+		<link rel="stylesheet" href="layui/css/layui.css"/>
+		<link rel="stylesheet" href="css/admin.css"/>
 		<script src="js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
-	  	<script src="js/layui.js" charset="utf-8"></script>
-	  	
+		<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>	  	
 	  	<style>
 	  		
 	  	</style>
@@ -53,46 +52,27 @@
 				</div>
 					
 				<div class="main-body" id="mainBody">
-					<?php include('newPublishBook.html'); ?> 
+					<?php include('publishedInfo.html'); ?> 
 					
 					
 				</div>
 			</div>
 		</div>
 		
-		
+		<script src="js/admin.js" charset="utf-8"></script>
 		<script>
 			layui.use('element', function() {
 				var element = layui.element;
 			});
+			
+			var type;
+			
+		
 		</script>
 		
 		<script>
 
-			var datas =["publishedInfo.php",
-					"newPublishInfo.html",
-					"publishedBook.html",
-					"newPublishBook.html",
-					"communityManage.html",
-					"countDown.html" ];
-			var main_box = document.getElementsByClassName('main-body')[0];
-			var dd = document.getElementsByTagName('dd');
-			for (var index=0; index < dd.length; index++) {
-			  	(function (index) {
-			    	dd[index].onclick = function () {
-						$.post(datas[index],
-						{
-							type:index
-						},
-						function(data){
-							var htmlobj = data;
-							var mainBody = $('#mainBody');
-			        		mainBody.html('');
-			        		mainBody.html(htmlobj);
-						});
-			    	};
-			    })(index);
-			}
+			
 			
 			
 			

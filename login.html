@@ -16,20 +16,22 @@
 						position: absolute;
 					}
 				</style>
-				<script src="js/jquery.js"></script>
-				<script src="js/verificationNumbers.js"></script>
-				<script src="js/Particleground.js"></script>
+				
 				
 		</head>
 
 	<body><canvas class="pg-canvas" width="926" height="729"></canvas>
+		
+		<form action="index.html" method="post" onsubmit="return logins()">
+			
+		
 		<dl class="admin_login">
 			<dt>
   <strong>用户登录</strong>
   <em>大学生考研在线</em>
  </dt>
 			<dd class="user_icon">
-				<input type="text" placeholder="账号" class="login_txtbx">
+				<input type="text" placeholder="账号" class="login_txtbx" id="te">
 			</dd>
 			<dd class="pwd_icon">
 				<input type="password" placeholder="密码" class="login_txtbx">
@@ -41,34 +43,42 @@
 				</div>
 			</dd>
 			<dd>
-				<input type="button" value="立即登陆" class="submit_btn" onclick="logins();">
+				<input type="submit" value="立即登陆" class="submit_btn">
 			</dd>
 
 		</dl>
-
-
+</form>
+	<script src="js/jquery-3.0.0.min.js" charset="utf-8"></script>
+	<script src="js/verificationNumbers.js"></script>
+	<script src="js/Particleground.js"></script>
 	<script>
+		
+		var verNum = 0;
+		$(document).ready(function() {
+			//粒子背景特效
+			$('body').particleground({
+				dotColor: '#5cbdaa',
+				lineColor: '#5cbdaa'
+			});
+			//验证码
+			createCode();
+//			//测试提交，对接程序删除即可
+//			$(".submit_btn").click(function() {
+//				location.href = "javascrpt:;" /*tpa=http://***index.html*/ ;
+//			});
+		});
+			
+					
 		function logins(){
 			var status = validate(verNum);
-			
 			if(status == 1){
-//				window.location(index.html);
+				console.log(1);
+				return true;
+			}else{
+				console.log(2);
+				return false;
 			}
 		}
-					var verNum = 0;
-					$(document).ready(function() {
-						//粒子背景特效
-						$('body').particleground({
-							dotColor: '#5cbdaa',
-							lineColor: '#5cbdaa'
-						});
-						//验证码
-						createCode();
-						//测试提交，对接程序删除即可
-						$(".submit_btn").click(function() {
-							location.href = "javascrpt:;" /*tpa=http://***index.html*/ ;
-						});
-					});
 	</script>
 	</body>
 </html>

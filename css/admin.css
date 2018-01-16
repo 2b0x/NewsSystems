@@ -113,7 +113,7 @@ html{
 .type select{
     border: 1px solid #e6e6e6;
     height: 38px;
-    width: 98px;
+    width: 110px;
     padding-left: 10px;
 }
 .page{
@@ -160,6 +160,11 @@ html{
 .newPublishInfo input.layui-input{
 	margin-top: 20px;
 }
+.publishedInfo form{
+	    display: inline-block;
+    width: 130px;
+}
+
 
 /*已发布图书*/
 .booklist{
@@ -375,6 +380,7 @@ html{
 	border: 0;
 	border-radius: 15px;
 	cursor: pointer;
+	text-align: center;
 }
 .CDBox .su:hover{
 	transition: background-color .3s; 

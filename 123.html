@@ -7,6 +7,20 @@
     <title>QQ����10��������ͼJS����ͼ����_����ͼ��</title>
     <link href="css/foucs.css" rel="stylesheet" />
     <script src="js/foucs.js" type="text/javascript"></script>
+    
+    <style>
+    	li{
+    		height: 50px;
+    		width: 50px;
+    		display: inline-block;
+    	}
+    	.red{
+    		background-color: red;
+    	}
+    	.bule{
+    		background-color: blue;
+    	}
+    </style>
 </head>
 <body>
     <div class="mod_focus_show" id="divimgplay">
@@ -35,8 +49,40 @@
         </ul>
     </div>
    
+   <div class="menu">
+   	<ul>
+   	<li class="red some">1</li>
+   	<li>2</li>
+   	<li>3</li>
+   	<li>4</li>
+   	<li>5</li>
+   </ul>
+   </div>
+   
+   
+   <script src="js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
    <script type="text/javascript">
         foucsbox(2500);
+        
+//      	var li = $('.menu ul li');
+//			for (var index=0; index < li.length; index++) {
+//			  	(function (index) {
+//			    	li[index].onclick = function () {
+////						console.log(index);
+//						for (var i=0; i < li.length; i++) {
+//							li[i].classList.remove('red');
+//						}
+//						li[index].classList.add('red');
+//			    	};
+//			    })(index);
+//			}
+        
+        	$('.menu ul li').click(function(){
+        		$(this).siblings('li').removeClass('red');
+        		$(this).addClass('red');
+        	})
+        	
+        	
     </script>
 </body>
 </html>
