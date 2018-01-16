@@ -3,8 +3,8 @@
 		<input type="text" id="date" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
 		<button type="submit" class="layui-btn layui-btn-normal">搜索</button>
 	</div>
-	
-	<form action="" class="layui-form" lay-filter="msg-search-form">
+
+	<form action="" class="layui-form" lay-filter="msg-type-form">
 		<div class="type layui-input-block">
 			<select name="" id="infoType" lay-filter="listType">
 				<option value="1">国家政策</option>
@@ -14,98 +14,44 @@
 			</select>
 		</div>
 	</form>
-	
-	
+
 	<div class="main-l-body">
 		<ul class="body-list" id="bodyList">
-				
+			<li>
+				<a href="" class="title">4524</a>
+				<span class="span-time">2017-12-25 14:50:01</span>
+				<a href="javascript:void(0);" class="list-btn btnBlue">查看</a>
+				<a href="javascript:void(0);" class="list-btn btnOrg infoDel" data-id=" 4">删除</a>
+			</li>
 		</ul>
-		<div id="page" class="page"></div>
+		<div id="page" class="page" lay-filter="msg-page"></div>
 	</div>
 </div>
-<!--<script src="js/filldata.js" type="text/javascript" charset="utf-8"></script>-->
+<script src="js/publishedInfo.js" charset="utf-8"></script>
 <script>
-var pages; //当前请求数据总数
-//载入执行
-//$(document).ready(function(){
-	fillData(1,1);//默认将列表填充为type=1
 	
 	
-
-	layui.use('laypage', function() {
-		var p=parseInt(pages);
-		var laypage = layui.laypage;
-		laypage.render({
-			elem: 'page'
-			,count: p 
-			,limit: 20
-		});
-	});
-	
-//});
-layui.use('form', function(){
-	var form = layui.form;
-	//监听下拉事件
-	form.on('select(listType)', function(data){
-		type = data.value; //得到被选中的值
-					  	
-		fillData(type,1);
-		var p = parseInt(pages);
-		layui.use('laypage', function() {
-			var laypage = layui.laypage;
-							
-			//执行一个laypage实例
-			laypage.render({
-				elem: 'page' //注意，这里的 test1 是 ID，不用加 # 号
-				,count: p //数据总数，从服务端得到
-				,limit: 20
-			});
-		});
-	});
-				
-	form.render(null, 'msg-search-form');
-
-})
-
-  
-
-
-	
-//填充数据列表的请求函数	
-function fillData(type,page){
-	$('#bodyList').html('');
-	var type=type;
-	var page=page;
-	var listData;
-	console.log(type);
-	console.log(page);
-	$.ajax({
-			async:false,
-			url: "publishedInfo.php",
+$('#bodyList').on('click', '.infoDel', function() {
+    var artId = $(this).attr('data-id');
+		$.ajax({
+			async: false,
+			url: "delInfo.php",
 			type: "POST",
-			data:{
-				type: type,
-				page: page
+			data: {
+				artId: artId
 			},
 			success: function(response, status, xhr) {
-				listData = JSON.parse(response); 
-				pages=listData.length;
-				if(listData.length>10){
-//					listLength
+				var status=response;
+				if(status==0){
+					alert("删除失败！");
+				}else{
+					alert("删除成功！");
+					fillData(type,p);
 				}
-				for(var i=0;i<listData.length;i++){
-					var list = '<li><a href="">'+ listData[i].title +'</a><span class="span-time">'+ listData[i].date +'</span><a href="###" class="list-btn btnBlue">查看</a><a href="###" class="list-btn btnOrg">删除</a></li>';
-					$('#bodyList').append(list);
-					
-				}	
+//				console.log(status);
 			}
-	});
-}
-	
-	
-	
-	
-	
-	
+		});
+});
+
 	
 </script>

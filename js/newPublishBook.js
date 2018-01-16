@@ -64,17 +64,6 @@ function fsubmit() {
 			processData: false,
 			contentType: false,
 			success: function(response, status, xhr) {
-//				console.log(xhr);
-//				var json = $.parseJSON(response);
-//				var result = '';
-//				result += json['book_name'] + "<br/>" + json['author'] + "<br/>" + json['price'] + "<br/>" + json['isbn'] + "<br/>" + json['press'] + "<br/>" + json['intro'];
-//				result += '<br/><img src="' + json['photo1'] + '" height="100" />';
-//				result += '<br/><img src="' + json['photo2'] + '" height="100" />';
-//				result += '<br/><img src="' + json['photo3'] + '" height="100" />';
-//				result += '<br/>' + json['photo1'];
-//				result += '<br/>' + json['photo2'];
-//				result += '<br/>' + json['photo3'];
-//				$('#result').html(result);
 				for(var i = 0; i < 5; i++) {
 					inputs[i].value = "";
 				}

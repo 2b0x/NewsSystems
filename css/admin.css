@@ -84,6 +84,10 @@ html{
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
+.body-list li .title:hover{
+	color: #ca0c16;
+}
+
 .span-time{
 	margin-left: 20px;
 	width: 80px;
