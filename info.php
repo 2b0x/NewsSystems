@@ -11,11 +11,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="renderer" content="webkit">
 	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	  	<link rel="stylesheet" href="css/layui.css"  media="all">
+	  	<link rel="stylesheet" href="layui/css/layui.css"/>
 	  	<link rel="stylesheet" href="css/base.css"/>
 	  	<link rel="stylesheet" href="css/Cbase.css" />
 	  	<link rel="stylesheet" href="css/footer.css"/>
-		<script src="js/layui.js" charset="utf-8"></script>
+	  	<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
 		<title>学习资讯</title>
 	</head>
 	

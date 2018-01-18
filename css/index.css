@@ -229,7 +229,7 @@
 }
 .apply-logo{
 	width: 58px;
-	height: 50px;
+	height: 52px;
 	margin: 0 11px;
 	float: left;
 	display: inline;
@@ -287,9 +287,14 @@
 	height: 100px;
 	float: left;
 }
-.booklist em img{
-	width: 72px;
-	height: 100px;
+.booklist em .bookPic{
+    display: inline-block;
+    /*background-image: url('../img/5.png');*/
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .booklist li{
 	display: inline-block;

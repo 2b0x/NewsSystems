@@ -10,7 +10,7 @@
 	  	<link rel="stylesheet" href="css/Cbase.css" />
 	  	<link rel="stylesheet" href="css/footer.css"/>
 	  	<link rel="stylesheet" href="css/book.css"/>
-		<script src="js/layui.js" charset="utf-8"></script>
+		<script src="layui/layui.js" charset="utf-8"></script>
 		<title>学习资讯</title>
 	</head>
 	
@@ -39,57 +39,59 @@
 	  	
 
 						<div class="ll-body">
-						<ul class="booklist">
-							<li>
-								<em><img src="img/5.png"/></em>
-								<div class="bookinfo">
-									<p><a href="bookDetail.php" target="_blank">《2018考研数学36讲》</a></p>
-									<p>书内容均由张宇老师亲自独立编写完成。可供考生在基础阶段选用。</p>
-									<p>2016-03-11</p>
-								</div>
-							</li>
-							<li>
-								<em><img src="img/5.png"/></em>
-								<div class="bookinfo">
-									<p><a href="">《2018考研数学36讲》</a></p>
-									<p>书内容均由张宇老师亲自内容均由张宇老师亲内师亲内容均由张宇老师亲独立编写完成。可供考生在基础阶段选用。</p>
-									<p>2016-03-11</p>
-								</div>
-							</li>
-							<li>
-								<em><img src="img/5.png"/></em>
-								<div class="bookinfo">
-									<p><a href="">《2018考研数学36讲》</a></p>
-									<p>书内容均由张宇老师亲自独立编写完成。可供考生在基础阶段选用。</p>
-									<p>2016-03-11</p>
-								</div>
-							</li>
-							<li>
-								<em><img src="img/5.png"/></em>
-								<div class="bookinfo">
-									<p><a href="">《2018考研数学36讲》</p></a>
-									<p>书内容均由张宇老师亲自独立编写完成。可供考生在基础阶段选用。</p>
-									<p>2016-03-11</p>
-								</div>
-							</li>
-							<li>
-								<em><img src="img/5.png"/></em>
-								<div class="bookinfo">
-									<p><a href="">《2018考研数学36讲》</a></p>
-									<p>书内容均由张宇老师亲自独立编写完成。可供考生在基础阶段选用。</p>
-									<p>2016-03-11</p>
-								</div>
-							</li>
-							<li>
-								<em><img src="img/5.png"/></em>
-								<div class="bookinfo">
-									<p><a href="">《2018考研数学36讲》</a></p>
-									<p>书内容均由张宇老师亲自独立编写完成。可供考生在基础阶段选用。</p>
-									<p>2016-03-11</p>
-								</div>
-							</li>
-						</ul>
+							<ul class="booklist">
+								<li>
+									<em><img src="img/5.png"/></em>
+									<div class="bookinfo">
+										<p><a href="bookDetail.php" target="_blank">《2018考研数学36讲》</a></p>
+										<p>书内容均由张宇老师亲自独立编写完成。可供考生在基础阶段选用。</p>
+										<p>2016-03-11</p>
+									</div>
+								</li>
+								<li>
+									<em><img src="img/5.png"/></em>
+									<div class="bookinfo">
+										<p><a href="">《2018考研数学36讲》</a></p>
+										<p>书内容均由张宇老师亲自内容均由张宇老师亲内师亲内容均由张宇老师亲独立编写完成。可供考生在基础阶段选用。</p>
+										<p>2016-03-11</p>
+									</div>
+								</li>
+								<li>
+									<em><img src="img/5.png"/></em>
+									<div class="bookinfo">
+										<p><a href="">《2018考研数学36讲》</a></p>
+										<p>书内容均由张宇老师亲自独立编写完成。可供考生在基础阶段选用。</p>
+										<p>2016-03-11</p>
+									</div>
+								</li>
+								<li>
+									<em><img src="img/5.png"/></em>
+									<div class="bookinfo">
+										<p><a href="">《2018考研数学36讲》</p></a>
+										<p>书内容均由张宇老师亲自独立编写完成。可供考生在基础阶段选用。</p>
+										<p>2016-03-11</p>
+									</div>
+								</li>
+								<li>
+									<em><img src="img/5.png"/></em>
+									<div class="bookinfo">
+										<p><a href="">《2018考研数学36讲》</a></p>
+										<p>书内容均由张宇老师亲自独立编写完成。可供考生在基础阶段选用。</p>
+										<p>2016-03-11</p>
+									</div>
+								</li>
+								<li>
+									<em><img src="img/5.png"/></em>
+									<div class="bookinfo">
+										<p><a href="">《2018考研数学36讲》</a></p>
+										<p>书内容均由张宇老师亲自独立编写完成。可供考生在基础阶段选用。</p>
+										<p>2016-03-11</p>
+									</div>
+								</li>
+							</ul>
 						
+							<div id="page" class="page" lay-filter="msg-page"></div>
+							
 					</div>
 				</div>
 				</div>
@@ -110,7 +112,23 @@
 			li.removeClass('layui-this');
 			$(li[2]).addClass("layui-this");
 			
-			
+			//分页
+			layui.use('laypage', function() {
+				var laypage = layui.laypage;
+				laypage.render({
+					elem: 'page',
+					count: 50,
+					limit: 10,
+					jump: function(obj, first) {
+						var p = obj.curr;
+						//首次不执行
+						if(!first) {
+							
+						}
+					}
+				});
+				laypage.render(null, 'msg-page');
+			});
 		</script>
 		
 		

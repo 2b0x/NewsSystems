@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 <html>
-		<head>
-				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		
-				<title>帐号注册</title>
-				<meta name="author" content="DeathGhost">
-				<link rel="stylesheet" href="css/login.css">
-				<style>
-					body {
-						height: 100%;
-						background: #16a085;
-						overflow: hidden;
-					}
-					canvas {
-						z-index: -1;
-						position: absolute;
-					}
-				</style>
-				<script src="js/jquery-3.0.0.min.js"></script>
-				<script src="js/verificationNumbers.js"></script>
-				<script src="js/Particleground.js"></script>
-				
-		</head>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<title>帐号注册</title>
+		<meta name="author" content="DeathGhost">
+		<link rel="stylesheet" href="css/login.css">
+		<style>
+			body {
+				height: 100%;
+				background: #16a085;
+				overflow: hidden;
+			}
+			
+			canvas {
+				z-index: -1;
+				position: absolute;
+			}
+		</style>
+		<script src="js/jquery-3.0.0.min.js"></script>
+		<script src="js/Particleground.js"></script>
+
+	</head>
 	<style type="text/css" id="27217238320"></style>
 
 	<body><canvas class="pg-canvas" width="926" height="729"></canvas>
-		<form action="login.html" method="post"  enctype="multipart/form-data">
+		<form action="register.php" method="post" onsubmit="return subCheck()" enctype="multipart/form-data">
 			<dl class="admin_login">
 				<dt>
 				  	<strong>用户注册</strong>
 				  	<em>大学生考研在线</em>
 				</dt>
 				<dd class="pic">
-					<img src="img/5.png" alt="" id="preview"/>
+					<img src="img/5.png" alt="" id="preview" />
 					<a href="javascript:;" class="a-upload">
-				    	<input type="file" name="photo" id="" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传头像
+						<input type="file" name="photo" id="" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传头像
 					</a>
 				</dd>
 				<dd class="email_icon">
-					<input type="text" placeholder="请输入注册邮箱" name="email" class="login_txtbx">
+					<input type="email" id="email" required placeholder="请输入注册邮箱" name="email" class="login_txtbx">
 				</dd>
 				<dd class="name_icon">
-					<input type="text" placeholder="请输入帐号昵称" name="name" class="login_txtbx">
+					<input type="text" id="name" required placeholder="请输入帐号昵称" name="name" class="login_txtbx" value="" title="长度限制3-6个字符，且不能为符号">
 				</dd>
 				<dd class="phone_icon">
-					<input type="tel" placeholder="请输入联系号码" name="phone" class="login_txtbx">
+					<input type="tel" id="phone" required placeholder="请输入联系号码" name="phone" class="login_txtbx">
 				</dd>
 				<dd class="school_icon">
-					<select name="school">
+					<select name="school" required>
 						<option value="0">请选择报研学校</option>
 						<option value="1">中南大学</option>
 						<option value="2">电子科技大学</option>
@@ -56,64 +57,105 @@
 					</select>
 				</dd>
 				<dd class="pwd_icon">
-					<input type="password" placeholder="请输入您的密码" name="password" class="login_txtbx">
+					<input type="password" id="password" required placeholder="请输入您的密码" name="password" class="login_txtbx">
 				</dd>
 				<dd class="rpwd_icon">
-					<input type="password" placeholder="请确认您的密码" class="login_txtbx">
+					<input type="password" id="reqpsw" required placeholder="请确认您的密码" name="reqpsw" class="login_txtbx">
 				</dd>
 				<dd>
 					<!--<input type="hidden" name="action" value="add">-->
 					<input type="submit" value="立即注册" class="submit_btn">
 				</dd>
-	
+
 			</dl>
 		</form>
 
+		<script>
+			var picStatus = 0;
+			var verNum = 0;
+			$(document).ready(function() {
+				//粒子背景特效
+				$('body').particleground({
+					dotColor: '#5cbdaa',
+					lineColor: '#5cbdaa'
+				});
+			});
 
+			function imgPreview(fileDom) {
+				picStatus = 1;
+				//判断是否支持FileReader
+				if(window.FileReader) {
+					var reader = new FileReader();
+				} else {
+					alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+				}
 
-	<script>
+				//获取文件
+				var file = fileDom.files[0];
+				var imageType = /^image\//;
+				//是否是图片
+				if(!imageType.test(file.type)) {
+					alert("请选择图片！");
+					return;
+				}
+				//读取完成
+				reader.onload = function(e) {
+					//获取图片dom
+					var img = document.getElementById("preview");
+					//图片路径设置为读取的图片
+					img.src = e.target.result;
+				};
+				reader.readAsDataURL(file);
+			}
 
-					var verNum = 0;
-					$(document).ready(function() {
-						//粒子背景特效
-						$('body').particleground({
-							dotColor: '#5cbdaa',
-							lineColor: '#5cbdaa'
-						});
-						
-						//测试提交，对接程序删除即可
-						$(".submit_btn").click(function() {
-							location.href = "javascrpt:;" /*tpa=http://***index.html*/ ;
-						});
-					});
-		
-		
-		
-		 function imgPreview(fileDom){
-	        //判断是否支持FileReader
-	        if (window.FileReader) {
-	            var reader = new FileReader();
-	        } else {
-	            alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
-	        }
-	
-	        //获取文件
-	        var file = fileDom.files[0];
-	        var imageType = /^image\//;
-	        //是否是图片
-	        if (!imageType.test(file.type)) {
-	            alert("请选择图片！");
-	            return;
-	        }
-	        //读取完成
-	        reader.onload = function(e) {
-	            //获取图片dom
-	            var img = document.getElementById("preview");
-	            //图片路径设置为读取的图片
-	            img.src = e.target.result;
-	        };
-	        reader.readAsDataURL(file);
-	    }
-	</script>
+//			$("#email").blur(function(){
+//				var ePattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/; 
+//				if(!ePattern.test($(this).val())){
+//					$(this).val("");
+//					$(this).attr('placeholder','请输入正确的邮箱');
+//					$(this).focus();
+//				}
+//			});
+
+//			$("#name").blur(function(){
+//				var uPattern = /^[a-zA-Z0-9\u4e00-\u9fa5]{3,6}$/; 
+//				if(!uPattern.test($(this).val())){
+//					$(this).val("");
+//					$(this).attr('placeholder','帐号长度需为3-6个，且不能为符号');
+//					$(this).focus();
+//				}
+//			});
+			
+//			$("#phone").blur(function(){
+//				var mPattern = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/; 
+//				if(!mPattern.test($(this).val())){
+//					$(this).val("");
+//					$(this).attr('placeholder','请输入正确的手机格式');
+//					$(this).focus();
+//				}
+//			});
+
+			function subCheck() {
+				var school = document.getElementsByName('school')[0];
+				var password = document.getElementsByName('password')[0];
+				var reqpsw = document.getElementsByName('reqpsw')[0];
+				
+				if(picStatus == 0) {
+					alert("请上传头像");
+					return false;
+				}
+				if(school.value==0){
+					alert("请选择院校");
+					return false;
+				}
+				if(!(password.value==reqpsw.value) ){
+					alert("两次密码输入不一致请检查");
+					return false;
+				}
+				alert('注册成功');
+				return true;
+			}
+		</script>
 	</body>
+
 </html>

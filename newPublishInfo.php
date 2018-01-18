@@ -11,8 +11,8 @@
 				return FALSE;
 			}else{
 //				echo $type . $title . $content;
-				 $sqlstr = "insert into article(title,content,type) values('" .$title. "','" .$content. "','" .$type. "')";  
-				 @mysql_query($sqlstr) or die(mysql_error());  
+				$sqlstr = "insert into article(title,content,type) values('" .$title. "','" .$content. "','" .$type. "')";  
+				@mysql_query($sqlstr) or die(mysql_error());  
 				echo '3';
 				return TRUE;
 				exit();  

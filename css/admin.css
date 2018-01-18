@@ -32,6 +32,7 @@ html{
     flex-direction: column;
 }
 .header-bg{
+	min-width: 1000px;
 	background-color: rgba(0, 150, 136,1);
 }
 .header{
@@ -66,6 +67,7 @@ html{
 	background-color: #393D49;
 }
 .main-body{
+	min-width: 800px;
 	width: 100%;
 	flex-grow: 1;
 	overflow-y: auto;
@@ -181,6 +183,15 @@ html{
 	height: 100px;
 	float: left;
 }
+.booklist .bookPic{
+	width: 100%;
+    height: 100%;
+    display: inline-block;
+    background-image: url(../img/5.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 .booklist em img{
 	width: 72px;
 	height: 100px;
@@ -219,7 +230,15 @@ html{
 	color: #1787e0;
 }
 .bookinfo p:nth-child(1){
-	margin-bottom: 5px;
+	/*margin-bottom: 5px;*/
+}
+.bookinfo .title{
+    font-size: 17px;
+    width: 180px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .bookinfo p:nth-child(2){
 	height: 60px;
