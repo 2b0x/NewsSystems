@@ -6,16 +6,16 @@
 					  <li class="layui-nav-item layui-this" value="1">
 					    <a href="javascript:;">考研资讯&nbsp;</a>
 					    <dl class="layui-nav-child"> <!-- 二级菜单 -->
-					      <dd><a href="javascript:;">国家政策</a></dd>
-					      <dd><a href="javascript:;">院校政策</a></dd>
-					      <dd><a href="javascript:;">考研资讯</a></dd>
+					      <dd><a href="javascript:;" id="countryList">国家政策</a></dd>
+					      <dd><a href="javascript:;" id="schoolList">院校政策</a></dd>
+					      <dd><a href="javascript:;" id="consultList">考研资讯</a></dd>
 					    </dl>
 					  </li>
 					  <li class="layui-nav-item " value="2">
 					  	<a href="javascript:;">研友学习圈</a>
 					  	<dl class="layui-nav-child"> <!-- 二级菜单 -->
 					      <dd><a href="book.php">考研图书</a></dd>
-					      <dd><a href="javascript:;">学方法习</a></dd>
+					      <dd><a href="javascript:;" id="learnList">学方法习</a></dd>
 					    </dl>
 					  </li>
 					  <li class="layui-nav-item" value="3"><dl><dd><a href="community.php" target="_blank">研友交流圈</a></dd></dl></li>
@@ -23,10 +23,10 @@
 					  <li class="layui-nav-item" value="4"><dl><dd><a href="feedback.php" target="_blank">报名课程</a></dd></dl></li>
 					
 					  <li class="layui-nav-item fr">
-							<a href=""><img src="img/5.png" class="layui-nav-img">用户名</a>
+							<a href="javascript:void(0)"><img src="img/5.png" class="layui-nav-img"><?php if(!empty($username)){echo  $username ;}else{echo '用户登录';} ?></a>
 							<dl class="layui-nav-child">
-								<dd><a href="personInfo.php">修改信息</a></dd>
-								<dd><a href="javascript:;">退出登录</a></dd>
+								<dd><?php if(!empty($username)){echo '<a href="personInfo.php" target="_blank">' . $username . '</a>';}else{echo '<a href="login.php">用户登录</a>';} ?></dd>
+								<dd><a href="register.php"><?php if(!empty($username)){echo '<a href="loginOut.php">退出登录</a>';}else{echo '<a href="register.php">用户注册</a>';} ?></a></dd>
 							</dl>
 					  </li>
 					</ul>
@@ -67,24 +67,23 @@
 				}
  
 				var _url;
-				if(index==7||index==6||index==4){
-					_url='none'
-				}else{
+				if(index==1 || index==2 || index==3 || index==4 || index==5){
 					_url='list.php';
+					$.get( _url ,
+					{
+						type:index
+					},
+					function(data){
+						var htmlobj = data;
+						var mainBody = $('#mainBody');
+				        mainBody.html('');
+				        mainBody.html(htmlobj);
+					});
 				}
 				
 				
 				
-				$.get( _url ,
-				{
-					type:index
-				},
-				function(data){
-					var htmlobj = data;
-					var mainBody = $('#mainBody');
-			        mainBody.html('');
-			        mainBody.html(htmlobj);
-				});
+				
 //				console.log(index);
 				
 			};

@@ -18,7 +18,7 @@
 	<body>
 		<div class="body">
 			<div>
-				<?php include('headerNav.html');  ?>
+				<?php include('headerNav.php');  ?>
 			</div>
 
 			<div class="layui-clear"></div>
@@ -53,7 +53,6 @@
 							</ul>
 
 							<div id="page" class="page" lay-filter="msg-page"></div>
-
 						</div>
 					</div>
 				</div>
@@ -73,8 +72,16 @@
 			var li = $('ul.layui-nav li.layui-nav-item');
 			li.removeClass('layui-this');
 			$(li[2]).addClass("layui-this");
-			
+	
 			dataInitialize();
+
+			$('#countryList').attr('href','info.php?type=1');
+			$('#schoolList').attr('href','info.php?type=2');
+			$('#consultList').attr('href','info.php?type=3');
+			$('#learnList').attr('href','info.php?type=4');
+			
+			
+			
 
 			$('#search').click(function(){
 				var data = $('#searchData');//要搜索的数据
@@ -176,10 +183,6 @@
 								laypage.render(null, 'msg-page');
 							});
 						}
-						
-						
-						
-						
 					}
 				});
 			}

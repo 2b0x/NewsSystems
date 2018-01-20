@@ -2,7 +2,7 @@
 <html>
 		<head>
 				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-				<title>用户登录</title>
+				<title>后台登录</title>
 				<meta name="author" content="DeathGhost">
 				<link rel="stylesheet" href="css/login.css">
 				<style>
@@ -27,14 +27,14 @@
 		
 		<dl class="admin_login">
 			<dt>
-  <strong>用户登录</strong>
+  <strong>管理员登录</strong>
   <em>大学生考研在线</em>
  </dt>
 			<dd class="user_icon">
-				<input type="text" placeholder="请输入您的邮箱" class="login_txtbx" id="userEmail">
+				<input type="text" placeholder="请输入管理员帐号" class="login_txtbx" id="adminAccount">
 			</dd>
 			<dd class="pwd_icon">
-				<input type="password" placeholder="请输入您的密码" class="login_txtbx" id="passWord">
+				<input type="password" placeholder="请输入管理员密码" class="login_txtbx" id="adminPSW">
 			</dd>
 			<dd class="val_icon">
 				<div class="checkcode">
@@ -66,20 +66,20 @@
 		$('#loginBtn').click(function(){
 			var status = validate(verNum);
 			if(status==1){
-				var userEmail = $('#userEmail').val();
-				var passWord = $('#passWord').val();
+				var adminAccount = $('#adminAccount').val();
+				var adminPSW = $('#adminPSW').val();
 				$.ajax({
 					type:"post",
-					url:"checkLogin.php",
+					url:"checkAdmin.php",
 					async:false,
 					data: {
-						userEmail: userEmail,
-						passWord: passWord
+						adminAccount: adminAccount,
+						adminPSW: adminPSW
 					},
 					success:function(response, status, xhr){
 						if(response==1){
 							alert('登录成功');
-							window.location.href="index.php";
+							window.location.href="admin.php";
 						}else{
 							alert('登录失败，请检查帐号及密码正确性');
 						}

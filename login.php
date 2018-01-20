@@ -1,3 +1,6 @@
-<?php
+<?php	
+
 	require('login.html');
+	
+
 ?>

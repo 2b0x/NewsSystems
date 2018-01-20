@@ -20,6 +20,7 @@
 			}
 		</style>
 		<script src="js/jquery-3.0.0.min.js"></script>
+		
 		<script src="js/Particleground.js"></script>
 
 	</head>
@@ -64,7 +65,7 @@
 				</dd>
 				<dd>
 					<!--<input type="hidden" name="action" value="add">-->
-					<input type="submit" value="立即注册" class="submit_btn">
+					<input type="submit" id="subBtn" value="立即注册" class="submit_btn">
 				</dd>
 
 			</dl>
@@ -135,10 +136,13 @@
 //				}
 //			});
 
+
 			function subCheck() {
 				var school = document.getElementsByName('school')[0];
 				var password = document.getElementsByName('password')[0];
 				var reqpsw = document.getElementsByName('reqpsw')[0];
+				var unique=0;
+				var email = $('#email').val();
 				
 				if(picStatus == 0) {
 					alert("请上传头像");
@@ -152,6 +156,23 @@
 					alert("两次密码输入不一致请检查");
 					return false;
 				}
+				$.ajax({
+					async: false,
+					type: "post",
+					url: "isUnique.php",
+					data: {
+						email: email
+					},
+					success:function(response, status, xhr){
+						result = JSON.parse(response);
+						unique = result[0];
+					}
+				});
+				if(unique==1){
+					alert('当前邮箱已被注册，请使用新邮箱！');
+					return false;
+				}
+				
 				alert('注册成功');
 				return true;
 			}

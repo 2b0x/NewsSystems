@@ -18,7 +18,7 @@
 	<body>
 		<div class="body">
 
-			<?php include('headerNav.html');  ?>
+			<?php include('headerNav.php');  ?>
 			
 			<div class="layui-clear"></div>
 
@@ -122,6 +122,11 @@
 			layui.use('element', function() {
 				var element = layui.element;
 			});
+
+			$('#countryList').attr('href','info.php?type=1');
+			$('#schoolList').attr('href','info.php?type=2');
+			$('#consultList').attr('href','info.php?type=3');
+			$('#learnList').attr('href','info.php?type=4');
 
 			layui.use('carousel', function() {
 				var carousel = layui.carousel;

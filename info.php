@@ -16,7 +16,7 @@
 	
 	<body>
 		<div class="body">
-			<div><?php include('headerNav.html');  ?></div>
+			<div><?php include('headerNav.php');  ?></div>
 			
 			
 			<div class="layui-clear"></div>
@@ -26,9 +26,9 @@
 					<h2 id="unite-title">考研资讯</h2>
 					<form class="layui-form" action="">
 						<div class="search">
-							<input type="text" id="date" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+							<input type="text" id="date" name="username" lay-verify="required" placeholder="请输入搜索关键字" autocomplete="off" class="layui-input">
 						</div>
-					    <button type="submit" class="layui-btn layui-btn-normal">搜索</button>
+					    <button id="search" type="button" class="layui-btn layui-btn-normal">搜索</button>
 					</form>
 				</div>
 				

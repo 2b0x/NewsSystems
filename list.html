@@ -22,11 +22,7 @@ fillData(type,1);
 var title = ['','国家政策','院校政策','考研资讯','学习方法'];
 $('#unite-title').html(title[type]);
 
-
-
-
 var pages = totalPage(type);
-
 	
 //分页
 layui.use('laypage', function() {
@@ -67,7 +63,11 @@ layui.use('laypage', function() {
 });
 
 
-	
+$('#search').click(function(){
+	console.log(1);
+});
+
+
 	
 	
 	

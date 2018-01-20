@@ -25,8 +25,8 @@
 				<div class="login-box">
 					<dd><img src="img/5.png" alt="" /></dd>
 					<div class="login-boxs">
-						<span class="login"><a href="login.php">用户登录</a></span>
-						<span class="register"><a href="register.php">注册用户</a></span>
+						<span class="login"><?php if(!empty($username)){echo '<a href="personInfo.php" target="_blank">' . $username . '</a>';}else{echo '<a href="login.php">用户登录</a>';} ?></span>
+						<span class="register"><a href="register.php"><?php if(!empty($username)){echo '<a href="loginOut.php">退出登录</a>';}else{echo '<a href="register.php">用户注册</a>';} ?></a></span>
 					</div>
 				</div>
 

@@ -39,7 +39,7 @@ function validate (verNum) {
 //    window.open(document.getElementById("J_down").getAttribute("data-link"));
       document.getElementById("J_codetext").value="";
 //    createCode();
-      document.getElementById("J_codetext").setAttribute("placeholder","验证成功");
+      document.getElementById("J_codetext").setAttribute("placeholder","验证码检验成功");
       verNum = 1;
       return verNum;
     }

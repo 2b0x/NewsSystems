@@ -23,7 +23,7 @@
 						<span>大学生考研在线管理平台</span>
 					</div>	
 					<div class="login-box">
-						<span class="register"><a href="">注销登录</a></span>
+						<span class="register"><?php if(!empty($adminName)){echo '<a href="adminOut.php">退出管理员帐号</a>';}else{echo '<a href="adminLog.html">用户登录</a>';} ?></span>
 					</div>
 				</div>
 			</div>
