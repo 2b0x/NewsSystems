@@ -1,5 +1,7 @@
 /*主体开始*/
-
+.body-list{
+	min-height: 1050px;
+}
 .body-list li{
 	position: relative;
 	padding-right: 90px;

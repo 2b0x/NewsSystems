@@ -14,7 +14,7 @@
         bigimgs[lastIndex].style.display = 'none';
         bigimgs[z].style.display = 'block';
         try {
-            imglink.innerHTML = samllimgs[z].getElementsByTagName('img')[0].alt;
+            imglink.innerHTML = samllimgs[z].getElementsByTagName('div')[0].alt;
         }
         catch (e) {
             imglink.innerText = samllimgs[z].firstChild.firstChild.alt;
@@ -31,7 +31,7 @@
             else {
                 na = e.target.nodeName;
             }
-            if (na === 'IMG') {
+            if (na === 'DIV') {
                 slide(z);
             }
         }
@@ -44,7 +44,7 @@
         i = getNextI(1);
     }, time);
     try {
-        imglink.innerText = samllimgs[0].getElementsByTagName('img')[0].alt;
+        imglink.innerText = samllimgs[0].getElementsByTagName('div')[0].alt;
     }
     catch (e) {
         imglink.innerText = samllimgs[0].firstChild.firstChild.alt;

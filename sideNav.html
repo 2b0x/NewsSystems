@@ -1,5 +1,5 @@
 <div class="main-right">
-	<div class="aside-box" style="display: none;">
+	<!--<div class="aside-box" style="display: none;">
 		<div class="aside-title">招生信息</div>
 		<div class="aside-body">
 			<ul class="ib-content">
@@ -29,9 +29,9 @@
 				</li>
 			</ul>
 		</div>
-	</div>
+	</div>-->
 
-	<div class="aside-box" style="display: none;">
+	<!--<div class="aside-box" style="display: none;">
 		<div class="aside-title">近期热点</div>
 		<div class="aside-body">
 			<ul class="ib-content">
@@ -52,7 +52,7 @@
 				</li>
 			</ul>
 		</div>
-	</div>
+	</div>-->
 
 	<div class="aside-box">
 		<div class="aside-title">考研工具箱</div>
@@ -134,11 +134,11 @@
 <script>
 	var data = fillData(5);
 	for(var i = 0; i < 6; i++) {
-		var list = '<li class="ib-items"><span class="ib-news"><a href="">' + data[i].title + '</a></span></li>';
+		var list = '<li class="ib-items"><span class="ib-news"><a href="articleDetail.php?artId=' + data[i].id + '" target="_blank">' + data[i].title + '</a></span></li>';
 		$('#ib-content1').append(list);
 	}
 	for(var i = 6; i < 12; i++) {
-		var list = '<li class="ib-items"><span class="ib-news"><a href="">' + data[i].title + '</a></span></li>';
+		var list = '<li class="ib-items"><span class="ib-news"><a href="articleDetail.php?artId=' + data[i].id + '" target="_blank">' + data[i].title + '</a></span></li>';
 		$('#ib-content2').append(list);
 	}
 	data = null;

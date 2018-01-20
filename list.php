@@ -1,9 +1,12 @@
 
-
 <?php
 
-$test = $_POST['type'];
+	if(empty($_GET[type])){
+		$type=3;
+	}else{
+		$type = $_GET[type];
+	}
+	
 	
 	include('list.html');
-	
-?>
+?>	

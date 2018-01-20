@@ -63,6 +63,7 @@
 				if(index==1 || index==2 || index==3 || index==4 || index==5){
 					
 					document.getElementsByClassName('unite-title')[0].getElementsByTagName('h2')[0].innerHTML=unite_title[index-1];
+					type=index;
 				}
  
 				var _url;
@@ -72,7 +73,9 @@
 					_url='list.php';
 				}
 				
-				$.post( _url ,
+				
+				
+				$.get( _url ,
 				{
 					type:index
 				},
@@ -82,7 +85,7 @@
 			        mainBody.html('');
 			        mainBody.html(htmlobj);
 				});
-				console.log(index);
+//				console.log(index);
 				
 			};
 		})(index);

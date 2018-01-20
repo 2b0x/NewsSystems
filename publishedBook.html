@@ -16,13 +16,12 @@
 	</ul>
 
 	<div id="page" class="page" lay-filter="msg-page"></div>
-
 </div>
 
 <script>
 	var p = 1;
 	var pages = totalPage();
-	fillBook(p);
+	fillBook(p,10);
 
 	layui.use('laypage', function() {
 		var laypage = layui.laypage;
@@ -34,7 +33,7 @@
 				p = obj.curr;
 				//首次不执行
 				if(!first) {
-					fillBook(p);
+					fillBook(p,10);
 
 				}
 			}
@@ -58,28 +57,29 @@
 					alert("删除失败！");
 				} else {
 					alert("删除成功！");
-					fillBook(p);
+					fillBook(p,10);
 				}
 			}
 		});
 	});
 
-	function fillBook(page) {
+	function fillBook(page,num) {
 		$('#booklist').html('');
 		var pages = page;
-
+		var num = num;
 		$.ajax({
 			async: false,
 			url: "publishedBook.php",
 			type: "POST",
 			data: {
-				page: pages
+				page: pages,
+				num: num
 			},
 			success: function(response, status, xhr) {
 				var listData = JSON.parse(response);
 				var length = listData.length;
 				for(var i = 0; i < length; i++) {
-					var list = '<li><em><div class="bookPic" style="background-image: url(' + listData[i].pic + ');"></div></em><div class="bookinfo"><p><a href="###" class="title">《' + listData[i].book_name + '》</a></p><p>' + listData[i].intro + '</p><p>' + listData[i].date + '</p></div><a href="javascript:void(0);" class="btnBlue list-btn">查看</a><a href="javascript:void(0);" class="btnOrg list-btn bookDel" data-id="' + listData[i].id + '">删除</a></li>';
+					var list = '<li><em><div class="bookPic" style="background-image: url(' + listData[i].pic + ');"></div></em><div class="bookinfo"><p><a href="bookDetail.php?bookId=' + listData[i].id + '"   target="_blank" class="title">《' + listData[i].book_name + '》</a></p><p>' + listData[i].intro + '</p><p>' + listData[i].date + '</p></div><a href="bookDetail.php?bookId=' + listData[i].id + '"   target="_blank" class="btnBlue list-btn">查看</a><a href="javascript:void(0);" class="btnOrg list-btn bookDel" data-id="' + listData[i].id + '">删除</a></li>';
 					$('#booklist').append(list);
 				}
 			}

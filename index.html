@@ -42,13 +42,13 @@
 							<dl class="layui-nav-child">
 								<!-- 二级菜单 -->
 								<dd>
-									<a href="info.php?type=1">国家政策</a>
+									<a href="info.php?type=1" target="_blank">国家政策</a>
 								</dd>
 								<dd>
-									<a href="info.php?type=2">院校政策</a>
+									<a href="info.php?type=2" target="_blank">院校政策</a>
 								</dd>
 								<dd>
-									<a href="info.php?type=3">考研资讯</a>
+									<a href="info.php?type=3" target="_blank">考研资讯</a>
 								</dd>
 							</dl>
 						</li>
@@ -57,15 +57,15 @@
 							<dl class="layui-nav-child">
 								<!-- 二级菜单 -->
 								<dd>
-									<a href="book.php">考研图书</a>
+									<a href="book.php" target="_blank">考研图书</a>
 								</dd>
 								<dd>
-									<a href="info.php?type=4">学方法习</a>
+									<a href="info.php?type=4" target="_blank">学方法习</a>
 								</dd>
 							</dl>
 						</li>
 						<li class="layui-nav-item">
-							<a href="community.php">研友交流圈</a>
+							<a href="community.php" target="_blank">研友交流圈</a>
 						</li>
 
 						<li class="layui-nav-item">
@@ -201,7 +201,7 @@
 							<div class="country" id="country">
 								<div class="il-head">
 									<span>国家政策</span>
-									<span><a href="">更多 ></a></span>
+									<span><a href="info.php?type=1" target="_blank">更多 ></a></span>
 								</div>
 								<div class="info-body">
 									<ul class="ib-content">
@@ -216,7 +216,7 @@
 							<div class="school" id="school">
 								<div class="il-head">
 									<span>院校政策</span>
-									<span><a href="">更多 ></a></span>
+									<span><a href="info.php?type=2" target="_blank">更多 ></a></span>
 								</div>
 								<div class="info-body">
 									<ul class="ib-content">
@@ -227,7 +227,7 @@
 							<div class="consult" id="consult">
 								<div class="il-head">
 									<span>考研资讯</span>
-									<span><a href="">更多 ></a></span>
+									<span><a href="info.php?type=3" target="_blank">更多 ></a></span>
 								</div>
 								<div class="info-body">
 									<ul class="ib-content">
@@ -320,7 +320,7 @@
 					<div class="lesson-l">
 						<div class="il-head">
 							<span>考研图书</span>
-							<span><a href="">更多 ></a></span>
+							<span><a href="book.php" target="_blank">更多 ></a></span>
 						</div>
 						<div class="ll-body">
 							<ul class="booklist" id="booklist">
@@ -342,7 +342,7 @@
 					<div class="lesson-r">
 						<div class="il-head">
 							<span>学习方法</span>
-							<span><a href="">更多 ></a></span>
+							<span><a href="info.php?type=4" target="_blank">更多 ></a></span>
 						</div>
 						<div class="info-body" id="learnMsg">
 							<ul class="ib-content">
@@ -389,7 +389,7 @@
 
 			//填充推荐内容
 			for(var i = 0; i < 4; i++) {
-				var list = '<div class="bb-item"><span class="title"><i class="iconfont">○</i><a href="">' + tuijian[i].title + '</a></span><span class="time">' + tuijian[i].date.split(' ')[0] + '</span></div>';
+				var list = '<div class="bb-item"><span class="title"><i class="iconfont">○</i><a href="articleDetail.php?artId=' + tuijian[i].id + '" target="_blank">' + tuijian[i].title + '</a></span><span class="time">' + tuijian[i].date.split(' ')[0] + '</span></div>';
 				$('#bottom-body').append(list);
 			}
 			tuijian = null; //清除内存
@@ -397,7 +397,7 @@
 			//填充图书内容
 			var bookdata = getBookData();
 			for(var i = 0; i < 6; i++) {
-				var list = '<li><em><div class="bookPic" style="background-image: url(' + bookdata[i].pic + ')"></div></em><div class="bookinfo"><p><a href="">《' + bookdata[i].book_name + '》</a></p><p>' + bookdata[i].intro + '</p><p>'  + bookdata[i].date.split(' ')[0] +'</p></div></li>';
+				var list = '<li><em><div class="bookPic" style="background-image: url(' + bookdata[i].pic + ')"></div></em><div class="bookinfo"><p><a href="bookDetail.php?bookId=' + bookdata[i].id + '"   target="_blank" >《' + bookdata[i].book_name + '》</a></p><p>' + bookdata[i].intro + '</p><p>'  + bookdata[i].date.split(' ')[0] +'</p></div></li>';
 				$('#booklist').append(list);
 			}
 			bookdata = null;
@@ -410,12 +410,12 @@
 				tuijian.push(data[0]);
 				if(data.length > 6) {
 					for(var i = 0; i < 6; i++) {
-						var list = '<li class="ib-items"><span class="dot-icon"></span><span class="ib-news"><a href="javascript:void(0)">' + data[i].title + '</a></span></li>';
+						var list = '<li class="ib-items"><span class="dot-icon"></span><span class="ib-news"><a href="articleDetail.php?artId=' + data[i].id + '" target="_blank">' + data[i].title + '</a></span></li>';
 						$(cont).append(list);
 					}
 				} else {
 					for(var i = 0; i < data.length; i++) {
-						var list = '<li class="ib-items"><span class="dot-icon"></span><span class="ib-news"><a href="javascript:void(0)">' + data[i].title + '</a></span></li>';
+						var list = '<li class="ib-items"><span class="dot-icon"></span><span class="ib-news"><a href="articleDetail.php?artId=' + data[i].id + '" target="_blank">' + data[i].title + '</a></span></li>';
 						$(cont).append(list);
 					}
 				}
@@ -448,7 +448,8 @@
 					url: "publishedBook.php",
 					type: "POST",
 					data: {
-						page: 1
+						page: 1,
+						num: 6
 					},
 					success: function(response, status, xhr) {
 						listData = JSON.parse(response);

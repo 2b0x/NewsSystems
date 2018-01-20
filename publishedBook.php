@@ -1,11 +1,13 @@
 <?php
 	
 	require('conn.php');
-	
+	$num = $_POST[num];
 	$page = $_POST[page];
-	$pageStart = ($page-1)*10;
+	$pageStart = ($page-1)*$num;
+	$num = $_POST[num];
 
-	$sql = "SELECT * FROM book LIMIT " . $pageStart .  ",10";   //mysql查询语句  
+
+	$sql = "SELECT * FROM book LIMIT " . $pageStart .  "," . $num;   //mysql查询语句  
 	$rs = mysql_query($sql) or die ("查询失败"); 
 	$data = array(); 
 	while($row = mysql_fetch_array($rs)){  

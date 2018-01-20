@@ -72,7 +72,7 @@ function fillData(type, page) {
 			listData = JSON.parse(response);
 			var length = listData.length;
 			for(var i = 0; i < length; i++) {
-				var list = '<li><a href="" class="title">' + listData[i].title + '</a><span class="span-time">' + listData[i].date + '</span><a href="javascript:void(0);" class="list-btn btnBlue">查看</a><a href="javascript:void(0);" class="list-btn btnOrg infoDel" data-id="' + listData[i].id + '">删除</a></li>';
+				var list = '<li><a href="articleDetail.php?artId=' + listData[i].id + '" target="_blank">' + listData[i].title + '</a><span class="span-time">' + listData[i].date + '</span><a href="articleDetail.php?artId=' + listData[i].id + '" target="_blank" class="list-btn btnBlue">查看</a><a href="javascript:void(0);" class="list-btn btnOrg infoDel" data-id="' + listData[i].id + '">删除</a></li>';
 				$('#bodyList').append(list);
 
 			}

@@ -1,10 +1,11 @@
 <?php
-	require('conn.php');
 	
-	$bookId = $_GET[bookId];
-
-	$sql = "SELECT * FROM book WHERE id='" . $bookId . "'";//mysql查询语句  
-
+	require('conn.php');
+	$keyword = $_POST[keyword];
+	
+	
+//SELECT * FROM [user] WHERE u_name LIKE '%三%' 
+	$sql = "SELECT * FROM book WHERE book_name LIKE '%" . $keyword . "%' ";   //mysql查询语句  
 	$rs = mysql_query($sql) or die ("查询失败"); 
 	$data = array(); 
 	while($row = mysql_fetch_array($rs)){  
@@ -15,19 +16,17 @@
 	for($i=0;$i<$length;$i++){	
 		$datas[$i][id] = $data[$i][id];
 		$datas[$i][book_name] = $data[$i][book_name];
-		$datas[$i][author] = $data[$i][author];
-		$datas[$i][price] = $data[$i][price];
-		$datas[$i][isbn] = $data[$i][isbn];
-		$datas[$i][press] = $data[$i][press];
 		$datas[$i][intro] = $data[$i][intro];
-		$datas[$i][photo1] = $data[$i][photo1];
-		$datas[$i][photo2] = $data[$i][photo2];
-		$datas[$i][photo3] = $data[$i][photo3];
 		$datas[$i][date] = $data[$i][date];
+		$datas[$i][pic] = $data[$i][photo1];
 	}
-	
+	echo urldecode(json_encode($datas));	
+
 	mysql_close();
+	
+?>
+
 
 	
-	include("bookDetail.html");
-?>
+
+

@@ -1,9 +1,3 @@
-<?php
-	$type = $_GET['type'];
-	$test = $type;
-?>
-
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -29,7 +23,7 @@
 			
 			<div class="main">
 				<div class="unite-title">
-					<h2>考研资讯</h2>
+					<h2 id="unite-title">考研资讯</h2>
 					<form class="layui-form" action="">
 						<div class="search">
 							<input type="text" id="date" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
@@ -41,8 +35,7 @@
 				<div class="main-left">
 					<div class="main-l-body" id="mainBody">
 						
-						<?php include('list.html'); ?>
-						
+						<?php include('list.php'); ?>
 						
 					</div>
 				</div>
@@ -60,6 +53,10 @@
 
 
 	<script>
+		
+		
+		
+
 		
 	</script>
 	
