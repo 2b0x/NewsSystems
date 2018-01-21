@@ -79,7 +79,7 @@
 }
 
 .item-r{
-	margin: 15px 15px 20px 0;
+	margin: 15px 20px 20px 0;
 	position: relative;
 	float: right;
 }
@@ -102,12 +102,12 @@
 	top: 13px;
 	border-right: 10px solid transparent;
 	border-bottom: 8px solid transparent;
-	border-left: 13px solid rgba(23, 135, 224,.7);
+	border-left: 13px solid rgba(92, 170, 233,1);
 	border-top: 8px solid transparent;
 	width: 0px;
 	height: 0px;
 	display: inline-block;
-	right: 65px;
+	right: 70px;
 }
 .item-r .item-box{	
     /*height: 50px;*/
@@ -116,7 +116,7 @@
     margin-top: 5px;
     display: inline-block;
     border-radius: 10px;
-    background-color: rgba(23, 135, 224,.7);
+    background-color: rgba(92, 170, 233,1);
 	padding: 10px;
 }
 .item-r .item-box {

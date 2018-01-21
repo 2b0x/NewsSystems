@@ -26,7 +26,7 @@
 					<h2 id="unite-title">考研资讯</h2>
 					<form class="layui-form" action="">
 						<div class="search">
-							<input type="text" id="date" name="username" lay-verify="required" placeholder="请输入搜索关键字" autocomplete="off" class="layui-input">
+							<input type="text" id="keyword" name="username" lay-verify="required" placeholder="请输入搜索关键字" autocomplete="off" class="layui-input">
 						</div>
 					    <button id="search" type="button" class="layui-btn layui-btn-normal">搜索</button>
 					</form>

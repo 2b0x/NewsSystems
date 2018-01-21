@@ -20,10 +20,10 @@
 					  </li>
 					  <li class="layui-nav-item" value="3"><dl><dd><a href="community.php" target="_blank">研友交流圈</a></dd></dl></li>
 					  
-					  <li class="layui-nav-item" value="4"><dl><dd><a href="feedback.php" target="_blank">报名课程</a></dd></dl></li>
+					  <li class="layui-nav-item" value="4"><dl><dd><a href="feedback.php" target="_blank">意见反馈</a></dd></dl></li>
 					
 					  <li class="layui-nav-item fr">
-							<a href="javascript:void(0)"><img src="img/5.png" class="layui-nav-img"><?php if(!empty($username)){echo  $username ;}else{echo '用户登录';} ?></a>
+							<a href="javascript:void(0)"><div class="headerPic" style="background-image: url(' <?php echo $userpic; ?> ');"></div><?php if(!empty($username)){echo  $username ;}else{echo '用户登录';} ?></a>
 							<dl class="layui-nav-child">
 								<dd><?php if(!empty($username)){echo '<a href="personInfo.php" target="_blank">' . $username . '</a>';}else{echo '<a href="login.php">用户登录</a>';} ?></dd>
 								<dd><a href="register.php"><?php if(!empty($username)){echo '<a href="loginOut.php">退出登录</a>';}else{echo '<a href="register.php">用户注册</a>';} ?></a></dd>

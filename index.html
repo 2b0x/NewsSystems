@@ -23,7 +23,7 @@
 					<span>大学生考研在线</span>
 				</div>
 				<div class="login-box">
-					<dd><img src="img/5.png" alt="" /></dd>
+					<dd><div class="Pic" style="background-image: url(' <?php echo $userpic;  ?> '); border-radius: 50%;"></div></dd>
 					<div class="login-boxs">
 						<span class="login"><?php if(!empty($username)){echo '<a href="personInfo.php" target="_blank">' . $username . '</a>';}else{echo '<a href="login.php">用户登录</a>';} ?></span>
 						<span class="register"><a href="register.php"><?php if(!empty($username)){echo '<a href="loginOut.php">退出登录</a>';}else{echo '<a href="register.php">用户注册</a>';} ?></a></span>
@@ -69,7 +69,7 @@
 						</li>
 
 						<li class="layui-nav-item">
-							<a href="feedback.php" target="_blank">报名课程</a>
+							<a href="feedback.php" target="_blank">意见反馈</a>
 						</li>
 					</ul>
 
@@ -397,7 +397,7 @@
 			//填充图书内容
 			var bookdata = getBookData();
 			for(var i = 0; i < 6; i++) {
-				var list = '<li><em><div class="bookPic" style="background-image: url(' + bookdata[i].pic + ')"></div></em><div class="bookinfo"><p><a href="bookDetail.php?bookId=' + bookdata[i].id + '"   target="_blank" >《' + bookdata[i].book_name + '》</a></p><p>' + bookdata[i].intro + '</p><p>'  + bookdata[i].date.split(' ')[0] +'</p></div></li>';
+				var list = '<li><em><div class="Pic" style="background-image: url(' + bookdata[i].pic + ')"></div></em><div class="bookinfo"><p><a href="bookDetail.php?bookId=' + bookdata[i].id + '"   target="_blank" >《' + bookdata[i].book_name + '》</a></p><p>' + bookdata[i].intro + '</p><p>'  + bookdata[i].date.split(' ')[0] +'</p></div></li>';
 				$('#booklist').append(list);
 			}
 			bookdata = null;
