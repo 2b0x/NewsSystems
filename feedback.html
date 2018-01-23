@@ -54,24 +54,6 @@
 
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=NQi8m4esKLus8mPDmw7cMdHB7S8bctZe"></script>
 <script src="js/jquery-3.0.0.min.js" charset="utf-8"></script>
-<script>
-var map = new BMap.Map("container");          // 创建地图实例  
-var point = new BMap.Point(116.404, 39.915);  // 创建点坐标  
-map.centerAndZoom(point, 15); 
-map.enableScrollWheelZoom(true);
-
-
-
-$('#MapBtn').click(function(){
-	console.log(1);
-	var opt = $('#opt');
-	if(opt.html()=='+'){
-		opt.html('-');
-	}else{
-		opt.html('+');
-	}
-	$('#container').slideToggle('slow');
-});
-</script>
+<script src="js/feedback.js" charset="utf-8"></script>
 </body>
 </html>

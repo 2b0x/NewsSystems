@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="layui/css/layui.css" media="all">
 		<link rel="stylesheet" href="css/base.css" />
 		<link rel="stylesheet" href="css/Cbase.css" />
-		<link rel="stylesheet" href="css/footer.css"/>
+		<link rel="stylesheet" href="css/footer.css" />
 		<link rel="stylesheet" href="css/community.css" />
 		<script src="layui/layui.js" charset="utf-8"></script>
 		<title>研友交流圈</title>
@@ -19,12 +19,12 @@
 		<div class="body">
 
 			<?php include('headerNav.php');  ?>
-			
+
 			<div class="layui-clear"></div>
 
 			<div class="main">
 				<div class="unite-title">
-					<h2>研友交流圈【<?php echo $school ?>】</h2>
+					<h2>研友交流圈【<?php if($school==''){echo '当前未登录';}else{ echo $school; } ?>】</h2>
 				</div>
 
 				<div class="main-left">
@@ -32,50 +32,25 @@
 						<div class="community-box">
 							<div class="hiddenBox">
 								<div id="scro" class="info-show">
-									<div class="item-r">
-										<dd class="pic">
-											<img src="img/5.png"/>
-											<span>我是右边的</span>
-										</dd>
-										<dd class="jiao"></dd>
-										<div class="item-box">
-											<p>这是内容，但是我特么并不知道要写什么好，所以我就随随反正又没人看。</p>
-											<span>2017-12-02</span>
-										</div>
-									</div>
 									
-									<div class="item-l">
-										<dd class="pic">
-											<img src="img/5.png"/>
-											<span>用户名</span>
-										</dd>
-										<dd class="jiao"></dd>
-										<div class="item-box">
-											<p>这是内容，但是我特么并不知道要写什么好，所以我就随随便便写一些进去算了，反正又没人看是内容，但是我特么并不知道要写什么好，所以我就随随便便写一些进去算了，反正又没人看。</p>
-											<span>2017-12-02</span>
-										</div>
-									</div>
-									
-								
-									
-									
+
 								</div>
 							</div>
 							<div class="new-info">
 								<form action="" method="post">
 									<textarea id="content" name="" rows="" cols="" class="layui-textarea" placeholder="请输入您要发表的内容"></textarea>
-									
-									    <div class="input-box">
-									      <input type="button" id="subBtn" class="layui-btn" lay-filter="formDemo" style="width: 67px;" value="发送" />
-									      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-									    </div>
+
+									<div class="input-box">
+										<input type="button" id="subBtn" class="layui-btn" lay-filter="formDemo" style="width: 67px;" value="发送" />
+										<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+									</div>
 								</form>
-								
+
 							</div>
 						</div>
 					</div>
 				</div>
-
+				
 				<?php require('sideNav.html');  ?>
 			</div>
 
@@ -83,68 +58,19 @@
 
 			<?php include('footer.html');  ?>
 		</div>
-
+		
 		<script>
 			layui.use('element', function() {
 				var element = layui.element;
 			});
-
-			$('#countryList').attr('href','info.php?type=1');
-			$('#schoolList').attr('href','info.php?type=2');
-			$('#consultList').attr('href','info.php?type=3');
-			$('#learnList').attr('href','info.php?type=4');
-
-			var scro = document.getElementById('scro');
-			scro.scrollTop = scro.scrollHeight;
-			
-			var li = $('ul.layui-nav li.layui-nav-item');
-			li.removeClass('layui-this');
-			$(li[3]).addClass("layui-this");
-			
-			
-			$('#subBtn').click(function(){
-				
-				var content = $('#content');
-				var userid = '<?php echo $userid ?>';
-				var username = "<?php echo $username ?>";
-				var school = "<?php echo $school ?>";
-				var userpic = "<?php echo $userpic ?>" ;
-				var isNull = content.val().trim().replace(/\s/g,"");
-				
-				if(userid==''){
-					alert('您还未登录，不可发表留言');
-				}else if(isNull==null||isNull==""||isNull==' '){
-					alert('内容不能为空');
-					content.val('');
-					content.focus();
-				}else{
-					$.ajax({
-						async:false,
-						type:"post",
-						url:"publishMsg.php",
-						data:{
-							userid: userid,
-							username: username,
-							userpic: userpic,
-							school: school,
-							content: content.val()
-						},
-						success:function(response,status,xhr){
-//							console.log(response);
-							if(response==1){
-								content.html(' ');
-								alert('发送成功');
-							}else{
-								alert('发送失败');
-							}
-							
-						}
-					});
-					console.log(userid+'--'+username+'--'+school+'--'+userpic);
-				}
-			});
-			
+			var userid = '<?php echo $userid; ?>';
+			var school = '<?php echo $school;  ?>';
+			var username = "<?php echo $username ?>";
+			var userpic = "<?php echo $userpic ?>";
 		</script>
+		<script src="js/community.js" charset="utf-8"></script>
 	</body>
+
+
 
 </html>

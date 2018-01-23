@@ -48,6 +48,18 @@
 	height: 100%;	
 	border-radius: 68px;
 }
+.communityPic{
+	display: inline-block;
+    width: 68px;
+    /*position: absolute;*/
+    height: 68px;
+    /*left: -40px;*/
+    border-radius: 50%;
+    /*top: 5px;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 .item-l .jiao{
 	/*content: "";*/
 	position: absolute;
